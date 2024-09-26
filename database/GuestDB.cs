@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PhumlaKamnandi2024.database
 {
@@ -118,10 +119,20 @@ namespace PhumlaKamnandi2024.database
             DataRow aRow = null;
             string dataTable = table1;
 
+            //if (dsMain.Tables.Contains("Account"))
+            //{
+            //    MessageBox.Show("Our Dataset has the table Guest");
+            //}
+
+            //foreach (DataTable table in dsMain.Tables)
+            //{
+            //    Console.WriteLine(table.TableName);
+            //}
+
             switch (operation)
             {
                 case PhumlaKamnandiDB.DBOperation.Add:
-                    aRow = dsMain.Tables[dataTable].NewRow();
+                    aRow = dsMain.Tables["Guest"].NewRow();
                     FillRow(aRow, aGuest, operation);
                     dsMain.Tables[dataTable].Rows.Add(aRow); //Add to the dataset
                     break;

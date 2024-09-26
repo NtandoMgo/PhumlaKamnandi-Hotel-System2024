@@ -65,6 +65,7 @@
     <Compile Include="business\Booking.cs" />
     <Compile Include="business\Employee.cs" />
     <Compile Include="business\Guest.cs" />
+    <Compile Include="business\GuestController.cs" />
     <Compile Include="business\Receptionist.cs" />
     <Compile Include="business\Room.cs" />
     <Compile Include="database\PhumlaKamnandiDB.cs" />
@@ -81,10 +82,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PhumlaKamnandiDatabaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="presentation\BookingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentation\BookingForm.Designer.cs">
+      <DependentUpon>BookingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presentation\DashBoardMDIParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentation\DashBoardMDIParent.Designer.cs">
+      <DependentUpon>DashBoardMDIParent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentation\BookingForm.resx">
+      <DependentUpon>BookingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentation\DashBoardMDIParent.resx">
+      <DependentUpon>DashBoardMDIParent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

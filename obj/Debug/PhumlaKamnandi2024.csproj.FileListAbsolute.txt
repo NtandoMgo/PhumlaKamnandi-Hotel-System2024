@@ -1,0 +1,14 @@
+C:\Users\Student\Desktop\mngnta\PhumlaKamnandi2024\bin\Debug\PhumlaKamnandiDatabase.mdf
+C:\Users\Student\Desktop\mngnta\PhumlaKamnandi2024\bin\Debug\PhumlaKamnandiDatabase_log.ldf
+C:\Users\Student\Desktop\mngnta\PhumlaKamnandi2024\bin\Debug\PhumlaKamnandi2024.exe.config
+C:\Users\Student\Desktop\mngnta\PhumlaKamnandi2024\bin\Debug\PhumlaKamnandi2024.exe
+C:\Users\Student\Desktop\mngnta\PhumlaKamnandi2024\bin\Debug\PhumlaKamnandi2024.pdb
+C:\Users\Student\Desktop\mngnta\PhumlaKamnandi2024\obj\Debug\PhumlaKamnandi2024.csproj.AssemblyReference.cache
+C:\Users\Student\Desktop\mngnta\PhumlaKamnandi2024\obj\Debug\PhumlaKamnandi2024.Form1.resources
+C:\Users\Student\Desktop\mngnta\PhumlaKamnandi2024\obj\Debug\PhumlaKamnandi2024.presentation.DashBoardMDIParent.resources
+C:\Users\Student\Desktop\mngnta\PhumlaKamnandi2024\obj\Debug\PhumlaKamnandi2024.Properties.Resources.resources
+C:\Users\Student\Desktop\mngnta\PhumlaKamnandi2024\obj\Debug\PhumlaKamnandi2024.csproj.GenerateResource.cache
+C:\Users\Student\Desktop\mngnta\PhumlaKamnandi2024\obj\Debug\PhumlaKamnandi2024.csproj.CoreCompileInputs.cache
+C:\Users\Student\Desktop\mngnta\PhumlaKamnandi2024\obj\Debug\PhumlaKamnandi2024.exe
+C:\Users\Student\Desktop\mngnta\PhumlaKamnandi2024\obj\Debug\PhumlaKamnandi2024.pdb
+C:\Users\Student\Desktop\mngnta\PhumlaKamnandi2024\obj\Debug\PhumlaKamnandi2024.presentation.BookingForm.resources
