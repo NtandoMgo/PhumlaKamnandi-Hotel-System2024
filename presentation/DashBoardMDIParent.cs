@@ -18,6 +18,7 @@ namespace PhumlaKamnandi2024.presentation
         public DashBoardMDIParent()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void ShowNewForm(object sender, EventArgs e)

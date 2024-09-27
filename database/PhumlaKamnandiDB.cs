@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Common;
 
 namespace PhumlaKamnandi2024.database
 {
@@ -72,6 +73,7 @@ namespace PhumlaKamnandi2024.database
                 //open the connection
                 cnMain.Open();
                 //***update the database table via the data adapter
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(daMain);
                 daMain.Update(dsMain, table);
                 //---close the connection
                 cnMain.Close();

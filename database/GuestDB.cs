@@ -26,7 +26,7 @@ namespace PhumlaKamnandi2024.database
         #region Constructor
         public GuestDB() : base()
         {
-            //RetrieveAllGuestsFromDB();
+            RetrieveAllGuestsFromDB();
         }
         #endregion
 
