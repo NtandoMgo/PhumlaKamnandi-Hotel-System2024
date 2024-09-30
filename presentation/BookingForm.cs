@@ -19,6 +19,8 @@ namespace PhumlaKamnandi2024.presentation
         private Guest aGuest;
         private BookingController bookingController;
         private Collection<Guest> guestCollection;
+        private int selectedAdult = 1;
+        private int selectedKids = 0;
         #endregion
 
         #region Utility Methods
@@ -121,35 +123,76 @@ namespace PhumlaKamnandi2024.presentation
             }
         }
 
+        private void ClearAllFields()
+        {
+            // Clear New Guest Fields
+            id_txt.Clear();
+            name_txt.Clear();
+            cell_txt.Clear();
+            email_txt.Clear();
+            addr_txt.Clear();
+            card_tct.Clear();
+            exp_txt.Clear();
+
+            // Clear Existing Guest Fields
+            signIn__idi_txt.Clear();
+
+            // Reset combo boxes for adults and kids
+            adults_combo_select.SelectedIndex = -1; 
+            kids_combo_select.SelectedIndex = -1; 
+
+            // Clear room list view selection
+            listView1.Items.Clear();
+
+            // Hide confirmation text box
+            confirmation_textBox.Clear();
+
+            // Reset radio buttons
+            newGuest_btn.Checked = false;
+            existing_btn.Checked = false;
+
+            // Disable controls
+            newGuest_btn.Enabled = false;
+            existing_btn.Enabled = false;
+
+            // Hide all controls related to guest info
+            ShowAll(false);
+        }
+
         #endregion
         public BookingForm()
         {
             InitializeComponent();
         }
 
-        #region Buttons
-        private void signin_Click(object sender, EventArgs e)
-        {
-            guestController = new GuestController();
-            PopulateGuestObject();
-            guestController.DataMaintenance(aGuest, database.PhumlaKamnandiDB.DBOperation.Add);
-            guestController.FinalizeChanges(aGuest);
-
-            MessageBox.Show("A guest is added");
-        }
-        #endregion
-
         private void BookingForm_Load(object sender, EventArgs e)
         {
             bookingController = new BookingController();
             guestController = new GuestController();
-            //newGuest_btn.Checked = false;
-            //existing_btn.Checked = false;
+
+            // Populate adults ComboBox
+            adults_combo_select.Items.Clear();
+            for (int i = 1; i <= 4; i++)
+            {
+                adults_combo_select.Items.Add(i.ToString());
+            }
+
+            // Populate kids ComboBox
+            kids_combo_select.Items.Clear();
+            for (int i = 0; i <4; i++)
+            {
+                kids_combo_select.Items.Add(i.ToString());
+            }
+
             confirmation_textBox.Visible = false;
+            confirmation_textBox.ReadOnly = true;
+            Exit_done_button.Visible = false;
 
             newGuest_btn.Enabled = false;
             existing_btn.Enabled = false;
             ShowAll(false);
+
+            roomDisplay.ReadOnly = true;
         }
 
         private void id_txt_TextChanged(object sender, EventArgs e)
@@ -170,6 +213,13 @@ namespace PhumlaKamnandi2024.presentation
         #region Buttons
         private void proceed_btn_Click(object sender, EventArgs e)
         {
+            // Check if at least 1 adult is selected
+            if (adults_combo_select.SelectedItem == null || int.Parse(adults_combo_select.SelectedItem.ToString()) < 1)
+            {
+                MessageBox.Show("Please select at least 1 adult to proceed.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Prevent further execution if no adult is selected
+            }
+
             newGuest_btn.Enabled = true;
             existing_btn.Enabled = true;
 
@@ -179,6 +229,36 @@ namespace PhumlaKamnandi2024.presentation
             }
 
             ShowAll(newGuest_btn.Checked || existing_btn.Checked);
+
+        }
+
+        private void signin_Click(object sender, EventArgs e)
+        {
+            // Validate the ID number
+            if (!ValidateGuestDetails())
+            {
+                return; // Stop the registration if the validation fails
+            }
+
+            guestController = new GuestController();
+            PopulateGuestObject();
+            guestController.DataMaintenance(aGuest, database.PhumlaKamnandiDB.DBOperation.Add);
+            guestController.FinalizeChanges(aGuest);
+
+            ClearAllFields();
+            //MessageBox.Show("A guest is added");
+            Booking newBooking = bookingController.CreateBooking(aGuest.ID, roomDisplay.Text, selectedAdult, selectedKids, dateTimePicker1.Value, dateTimePicker2.Value, request_txt.Text);
+
+            confirmation_textBox.Visible = true;
+            Exit_done_button.Visible = true;
+
+            confirmation_textBox.Text = $"Booking ID: {newBooking.BookingID}\n" +
+                                $"Guest ID: {newBooking.GuestID}\n" +
+                                $"Room No: {newBooking.RoomNum}\n" +
+                                $"Adults: {newBooking.NumAdults}, Children: {newBooking.NumChildren}\n" +
+                                $"Check-In: {newBooking.CheckInDate.ToShortDateString()}\n" +
+                                $"Check-Out: {newBooking.CheckOutDate.ToShortDateString()}\n" +
+                                $"Special Request: {newBooking.SpecialRequest}";
 
         }
 
@@ -197,6 +277,156 @@ namespace PhumlaKamnandi2024.presentation
 
                 listView1.Items.Add(item);
             }
+        }
+        #endregion
+
+        #region Combo Box select (Adults and Children
+        private void adults_combo_select_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedAdult = int.Parse(adults_combo_select.SelectedItem.ToString());
+
+            int maxKids = 4 - selectedAdult;
+
+            // Clear the items in the kids combo box and repopulate with valid options
+            kids_combo_select.Items.Clear();
+            for (int i = 0; i <= maxKids; i++)
+            {
+                kids_combo_select.Items.Add(i.ToString());
+            }
+            //kids_combo_select.SelectedIndex = 0;
+        }
+
+        private void kids_combo_select_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedKids = int.Parse(kids_combo_select.SelectedItem.ToString());
+
+            int maxAdults = 4 - selectedKids;
+
+            adults_combo_select.Items.Clear();
+            for (int i = 1; i <= maxAdults; i++)
+            {
+                adults_combo_select.Items.Add(i.ToString());
+            }
+        }
+        #endregion
+
+        #region Rooms List View
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if (listView1.SelectedItems.Count > 0)
+            {
+                string selectedRoomNumber = listView1.SelectedItems[0].Text;
+                roomDisplay.Text = selectedRoomNumber;
+            }
+        }
+        #endregion
+
+        #region Validate
+        private bool ValidateID()
+        {
+            // Get the ID from the text box
+            string idNumber = id_txt.Text;
+
+            // Check if the ID is exactly 13 digits long and consists only of digits
+            if (idNumber.Length != 13 || !idNumber.All(char.IsDigit))
+            {
+                MessageBox.Show("The ID number must be exactly 13 digits.", "Invalid ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidateFullName()
+        {
+            string fullName = name_txt.Text.Trim();
+
+            // Split the name by spaces to check for both first and last name
+            string[] nameParts = fullName.Split(' ');
+
+            if (nameParts.Length < 2 || nameParts.Any(part => string.IsNullOrWhiteSpace(part)))
+            {
+                MessageBox.Show("Please enter a valid full name (first and last name).", "Invalid Name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        private bool ValidateCellNumber()
+        {
+            string cellNumber = cell_txt.Text.Trim();
+
+            if (string.IsNullOrEmpty(cellNumber) || !cellNumber.All(char.IsDigit) || cellNumber.Length < 10)
+            {
+                MessageBox.Show("Please enter a valid cell number.", "Invalid Cell Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidateEmail()
+        {
+            string email = email_txt.Text.Trim();
+            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(email, emailPattern))
+            {
+                MessageBox.Show("Please enter a valid email address.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidateCardNumber()
+        {
+            string cardNumber = card_tct.Text.Trim();
+
+            if (cardNumber.Length != 16 || !cardNumber.All(char.IsDigit))
+            {
+                MessageBox.Show("The card number must be exactly 16 digits.", "Invalid Card Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidateExpiryDate()
+        {
+            string expiryDate = exp_txt.Text.Trim();
+            DateTime parsedDate;
+
+            // Check if the expiry date is in the correct format
+            if (!DateTime.TryParseExact(expiryDate, "MM/yyyy", null, System.Globalization.DateTimeStyles.None, out parsedDate))
+            {
+                MessageBox.Show("Please enter a valid expiry date (MM/YYYY).", "Invalid Expiry Date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Ensure the expiry date is in the future
+            if (parsedDate < DateTime.Now)
+            {
+                MessageBox.Show("The expiry date must be in the future.", "Invalid Expiry Date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidateGuestDetails()
+        {
+            // Validate each field
+            if (!ValidateFullName()) return false;
+            if (!ValidateID()) return false;
+            if (!ValidateCellNumber()) return false;
+            if (!ValidateEmail()) return false;
+            if (!ValidateCardNumber()) return false;
+            if (!ValidateExpiryDate()) return false;
+
+            // All validations passed
+            return true;
         }
         #endregion
     }

@@ -187,5 +187,36 @@ namespace PhumlaKamnandi2024.business
             }
         }
         #endregion
+
+        #region Unique Booking ID and Add a booking
+        public string GenerateUniqueBookingID()
+        {
+            // Unique ID generated based on current time + counter
+            string uniqueID = "B" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + currentReferenceNumber.ToString("D3");
+            currentReferenceNumber++; // Increment counter for uniqueness
+            return uniqueID;
+        }
+
+        public Booking CreateBooking(string guestID, string roomNo, int numAdults, int numChildren, DateTime checkIn, DateTime checkOut, string specialRequest)
+        {
+            Booking newBooking = new Booking
+            {
+                BookingID = GenerateUniqueBookingID(),
+                GuestID = guestID,
+                RoomNum = roomNo,
+                NumAdults = numAdults,
+                NumChildren = numChildren,
+                CheckInDate = checkIn,
+                CheckOutDate = checkOut,
+                SpecialRequest = specialRequest
+            };
+
+            // Insert the booking into the database
+            DataMaintenance(newBooking, database.PhumlaKamnandiDB.DBOperation.Add);
+            FinalizeChanges(newBooking);
+
+            return newBooking;
+        }
+        #endregion
     }
 }

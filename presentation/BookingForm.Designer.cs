@@ -66,6 +66,8 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.confirmation_textBox = new System.Windows.Forms.TextBox();
             this.Exit_done_button = new System.Windows.Forms.Button();
+            this.roomDisplay = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // newGuest_btn
@@ -276,9 +278,10 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(37, 128);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(340, 159);
+            this.listView1.Size = new System.Drawing.Size(340, 137);
             this.listView1.TabIndex = 23;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // serch_button
             // 
@@ -303,6 +306,7 @@
             this.adults_combo_select.Name = "adults_combo_select";
             this.adults_combo_select.Size = new System.Drawing.Size(53, 21);
             this.adults_combo_select.TabIndex = 28;
+            this.adults_combo_select.SelectedIndexChanged += new System.EventHandler(this.adults_combo_select_SelectedIndexChanged);
             // 
             // adults_lbl
             // 
@@ -336,6 +340,7 @@
             this.kids_combo_select.Name = "kids_combo_select";
             this.kids_combo_select.Size = new System.Drawing.Size(53, 21);
             this.kids_combo_select.TabIndex = 31;
+            this.kids_combo_select.SelectedIndexChanged += new System.EventHandler(this.kids_combo_select_SelectedIndexChanged);
             // 
             // request_txt
             // 
@@ -430,11 +435,31 @@
             this.Exit_done_button.Text = "Done";
             this.Exit_done_button.UseVisualStyleBackColor = true;
             // 
+            // roomDisplay
+            // 
+            this.roomDisplay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomDisplay.Location = new System.Drawing.Point(184, 271);
+            this.roomDisplay.Name = "roomDisplay";
+            this.roomDisplay.Size = new System.Drawing.Size(63, 26);
+            this.roomDisplay.TabIndex = 41;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(51, 274);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 19);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Selected Room:";
+            // 
             // BookingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 549);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.roomDisplay);
             this.Controls.Add(this.Exit_done_button);
             this.Controls.Add(this.confirmation_textBox);
             this.Controls.Add(this.proceed_btn);
@@ -519,5 +544,7 @@
         private System.Windows.Forms.TextBox confirmation_textBox;
         private System.Windows.Forms.Button Exit_done_button;
         private System.Windows.Forms.Label requests_lbl;
+        private System.Windows.Forms.TextBox roomDisplay;
+        private System.Windows.Forms.Label label1;
     }
 }
