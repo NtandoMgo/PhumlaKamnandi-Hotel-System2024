@@ -26,3 +26,4 @@ C:\Users\Student\Desktop\FINALE\PhumlaKamnandi-Hotel-System2024\obj\Debug\Phumla
 C:\Users\Student\Desktop\FINALE\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.csproj.CoreCompileInputs.cache
 C:\Users\Student\Desktop\FINALE\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.exe
 C:\Users\Student\Desktop\FINALE\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.pdb
+C:\Users\Student\Desktop\finale\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.presentation.GuestListViewForm.resources

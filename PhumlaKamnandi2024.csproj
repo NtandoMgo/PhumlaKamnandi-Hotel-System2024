@@ -100,6 +100,12 @@
     <Compile Include="presentation\DashBoardMDIParent.Designer.cs">
       <DependentUpon>DashBoardMDIParent.cs</DependentUpon>
     </Compile>
+    <Compile Include="presentation\GuestListViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentation\GuestListViewForm.Designer.cs">
+      <DependentUpon>GuestListViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentation\DashBoardMDIParent.resx">
       <DependentUpon>DashBoardMDIParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentation\GuestListViewForm.resx">
+      <DependentUpon>GuestListViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
