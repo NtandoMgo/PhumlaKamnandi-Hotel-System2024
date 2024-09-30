@@ -19,8 +19,8 @@ namespace PhumlaKamnandi2024.presentation
         private Guest aGuest;
         private BookingController bookingController;
         //private Collection<Guest> guestCollection;
-        private int selectedAdult = 1;
-        private int selectedKids = 0;
+        private int selectedAdult;
+        private int selectedKids;
         #endregion
 
         #region Utility Methods
@@ -306,7 +306,7 @@ namespace PhumlaKamnandi2024.presentation
         #endregion
 
         #region Combo Box select (Adults and Children
-        private void adults_txt_num_TextChanged(object sender, EventArgs e)
+        private void adults_txt_num_TextChanged_1(object sender, EventArgs e)
         {
             // Validate the input, ensuring only numbers are allowed
             if (int.TryParse(adults_txt_num.Text, out int adults))
@@ -320,7 +320,7 @@ namespace PhumlaKamnandi2024.presentation
             }
         }
 
-        private void kids_txt_num_TextChanged(object sender, EventArgs e)
+        private void kids_txt_num_TextChanged_1(object sender, EventArgs e)
         {
             // Validate the input, ensuring only numbers are allowed
             if (int.TryParse(kids_txt_num.Text, out int kids))

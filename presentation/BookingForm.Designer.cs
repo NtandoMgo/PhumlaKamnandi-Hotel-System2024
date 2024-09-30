@@ -425,6 +425,7 @@
             this.adults_txt_num.Name = "adults_txt_num";
             this.adults_txt_num.Size = new System.Drawing.Size(37, 26);
             this.adults_txt_num.TabIndex = 43;
+            this.adults_txt_num.TextChanged += new System.EventHandler(this.adults_txt_num_TextChanged_1);
             // 
             // kids_txt_num
             // 
@@ -433,6 +434,7 @@
             this.kids_txt_num.Name = "kids_txt_num";
             this.kids_txt_num.Size = new System.Drawing.Size(40, 26);
             this.kids_txt_num.TabIndex = 44;
+            this.kids_txt_num.TextChanged += new System.EventHandler(this.kids_txt_num_TextChanged_1);
             // 
             // listView2
             // 

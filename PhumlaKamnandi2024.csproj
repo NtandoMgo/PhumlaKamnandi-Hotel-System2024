@@ -64,16 +64,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="business\Account.cs" />
+    <Compile Include="business\AccountController.cs" />
     <Compile Include="business\Booking.cs" />
     <Compile Include="business\BookingController.cs" />
     <Compile Include="business\Guest.cs" />
     <Compile Include="business\GuestController.cs" />
+    <Compile Include="business\ReceptionController.cs" />
     <Compile Include="business\Receptionist.cs" />
     <Compile Include="business\Room.cs" />
     <Compile Include="business\RoomController.cs" />
+    <Compile Include="database\AccountDB.cs" />
     <Compile Include="database\BookingDB.cs" />
     <Compile Include="database\PhumlaKamnandiDB.cs" />
     <Compile Include="database\GuestDB.cs" />
+    <Compile Include="database\ReceptionDB.cs" />
     <Compile Include="database\RoomBD.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
