@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookingForm));
             this.newGuest_btn = new System.Windows.Forms.RadioButton();
             this.existing_btn = new System.Windows.Forms.RadioButton();
@@ -52,10 +53,8 @@
             this.back_btn = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.serch_button = new System.Windows.Forms.Button();
-            this.adults_combo_select = new System.Windows.Forms.ComboBox();
             this.adults_lbl = new System.Windows.Forms.Label();
             this.kids_lbl = new System.Windows.Forms.Label();
-            this.kids_combo_select = new System.Windows.Forms.ComboBox();
             this.request_txt = new System.Windows.Forms.TextBox();
             this.requests_lbl = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -64,15 +63,19 @@
             this.checkOut_lbl = new System.Windows.Forms.Label();
             this.proceed_btn = new System.Windows.Forms.Button();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.confirmation_textBox = new System.Windows.Forms.TextBox();
             this.Exit_done_button = new System.Windows.Forms.Button();
             this.roomDisplay = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.adults_txt_num = new System.Windows.Forms.TextBox();
+            this.kids_txt_num = new System.Windows.Forms.TextBox();
+            this.listView2 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // newGuest_btn
             // 
             this.newGuest_btn.AutoSize = true;
+            this.newGuest_btn.Checked = true;
             this.newGuest_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newGuest_btn.Location = new System.Drawing.Point(575, 91);
             this.newGuest_btn.Name = "newGuest_btn";
@@ -91,7 +94,6 @@
             this.existing_btn.Name = "existing_btn";
             this.existing_btn.Size = new System.Drawing.Size(112, 23);
             this.existing_btn.TabIndex = 1;
-            this.existing_btn.TabStop = true;
             this.existing_btn.Text = "Existing Guest";
             this.existing_btn.UseVisualStyleBackColor = true;
             this.existing_btn.CheckedChanged += new System.EventHandler(this.existing_btn_CheckedChanged);
@@ -238,7 +240,7 @@
             // old_guest_signin_btn
             // 
             this.old_guest_signin_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.old_guest_signin_btn.Location = new System.Drawing.Point(795, 336);
+            this.old_guest_signin_btn.Location = new System.Drawing.Point(701, 306);
             this.old_guest_signin_btn.Name = "old_guest_signin_btn";
             this.old_guest_signin_btn.Size = new System.Drawing.Size(89, 38);
             this.old_guest_signin_btn.TabIndex = 19;
@@ -248,7 +250,7 @@
             // signIn__idi_txt
             // 
             this.signIn__idi_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signIn__idi_txt.Location = new System.Drawing.Point(795, 223);
+            this.signIn__idi_txt.Location = new System.Drawing.Point(705, 215);
             this.signIn__idi_txt.Name = "signIn__idi_txt";
             this.signIn__idi_txt.Size = new System.Drawing.Size(168, 26);
             this.signIn__idi_txt.TabIndex = 20;
@@ -257,7 +259,7 @@
             // 
             this.signin_Id_lbl.AutoSize = true;
             this.signin_Id_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signin_Id_lbl.Location = new System.Drawing.Point(744, 223);
+            this.signin_Id_lbl.Location = new System.Drawing.Point(671, 218);
             this.signin_Id_lbl.Name = "signin_Id_lbl";
             this.signin_Id_lbl.Size = new System.Drawing.Size(28, 19);
             this.signin_Id_lbl.TabIndex = 21;
@@ -294,20 +296,6 @@
             this.serch_button.UseVisualStyleBackColor = true;
             this.serch_button.Click += new System.EventHandler(this.serch_button_Click);
             // 
-            // adults_combo_select
-            // 
-            this.adults_combo_select.FormattingEnabled = true;
-            this.adults_combo_select.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.adults_combo_select.Location = new System.Drawing.Point(117, 325);
-            this.adults_combo_select.Name = "adults_combo_select";
-            this.adults_combo_select.Size = new System.Drawing.Size(53, 21);
-            this.adults_combo_select.TabIndex = 28;
-            this.adults_combo_select.SelectedIndexChanged += new System.EventHandler(this.adults_combo_select_SelectedIndexChanged);
-            // 
             // adults_lbl
             // 
             this.adults_lbl.AutoSize = true;
@@ -322,25 +310,11 @@
             // 
             this.kids_lbl.AutoSize = true;
             this.kids_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kids_lbl.Location = new System.Drawing.Point(225, 325);
+            this.kids_lbl.Location = new System.Drawing.Point(180, 325);
             this.kids_lbl.Name = "kids_lbl";
             this.kids_lbl.Size = new System.Drawing.Size(41, 19);
             this.kids_lbl.TabIndex = 30;
             this.kids_lbl.Text = "Kids:";
-            // 
-            // kids_combo_select
-            // 
-            this.kids_combo_select.FormattingEnabled = true;
-            this.kids_combo_select.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "0"});
-            this.kids_combo_select.Location = new System.Drawing.Point(284, 323);
-            this.kids_combo_select.Name = "kids_combo_select";
-            this.kids_combo_select.Size = new System.Drawing.Size(53, 21);
-            this.kids_combo_select.TabIndex = 31;
-            this.kids_combo_select.SelectedIndexChanged += new System.EventHandler(this.kids_combo_select_SelectedIndexChanged);
             // 
             // request_txt
             // 
@@ -416,15 +390,6 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // confirmation_textBox
-            // 
-            this.confirmation_textBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmation_textBox.Location = new System.Drawing.Point(288, 120);
-            this.confirmation_textBox.Multiline = true;
-            this.confirmation_textBox.Name = "confirmation_textBox";
-            this.confirmation_textBox.Size = new System.Drawing.Size(424, 213);
-            this.confirmation_textBox.TabIndex = 39;
-            // 
             // Exit_done_button
             // 
             this.Exit_done_button.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -453,15 +418,43 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "Selected Room:";
             // 
+            // adults_txt_num
+            // 
+            this.adults_txt_num.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adults_txt_num.Location = new System.Drawing.Point(98, 318);
+            this.adults_txt_num.Name = "adults_txt_num";
+            this.adults_txt_num.Size = new System.Drawing.Size(37, 26);
+            this.adults_txt_num.TabIndex = 43;
+            // 
+            // kids_txt_num
+            // 
+            this.kids_txt_num.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kids_txt_num.Location = new System.Drawing.Point(227, 318);
+            this.kids_txt_num.Name = "kids_txt_num";
+            this.kids_txt_num.Size = new System.Drawing.Size(40, 26);
+            this.kids_txt_num.TabIndex = 44;
+            // 
+            // listView2
+            // 
+            this.listView2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(372, 162);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(342, 209);
+            this.listView2.TabIndex = 45;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
             // BookingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 549);
+            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.kids_txt_num);
+            this.Controls.Add(this.adults_txt_num);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.roomDisplay);
             this.Controls.Add(this.Exit_done_button);
-            this.Controls.Add(this.confirmation_textBox);
             this.Controls.Add(this.proceed_btn);
             this.Controls.Add(this.checkOut_lbl);
             this.Controls.Add(this.checkIn_lbl);
@@ -469,10 +462,8 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.requests_lbl);
             this.Controls.Add(this.request_txt);
-            this.Controls.Add(this.kids_combo_select);
             this.Controls.Add(this.kids_lbl);
             this.Controls.Add(this.adults_lbl);
-            this.Controls.Add(this.adults_combo_select);
             this.Controls.Add(this.serch_button);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.back_btn);
@@ -530,10 +521,8 @@
         private System.Windows.Forms.Button back_btn;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button serch_button;
-        private System.Windows.Forms.ComboBox adults_combo_select;
         private System.Windows.Forms.Label adults_lbl;
         private System.Windows.Forms.Label kids_lbl;
-        private System.Windows.Forms.ComboBox kids_combo_select;
         private System.Windows.Forms.TextBox request_txt;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -541,10 +530,13 @@
         private System.Windows.Forms.Label checkOut_lbl;
         private System.Windows.Forms.Button proceed_btn;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
-        private System.Windows.Forms.TextBox confirmation_textBox;
         private System.Windows.Forms.Button Exit_done_button;
         private System.Windows.Forms.Label requests_lbl;
         private System.Windows.Forms.TextBox roomDisplay;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox adults_txt_num;
+        private System.Windows.Forms.TextBox kids_txt_num;
+        private System.Windows.Forms.ListView listView2;
     }
 }

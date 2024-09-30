@@ -16,6 +16,7 @@ namespace PhumlaKamnandi2024.presentation
         private int childFormNumber = 0;
         private BookingForm bookingForm;
         private GuestListViewForm guestListViewForm;
+        private BookingListingForm bookingListingForm;
         #endregion
 
         public DashBoardMDIParent()
@@ -119,6 +120,12 @@ namespace PhumlaKamnandi2024.presentation
         {
             guestListViewForm = new GuestListViewForm();
             guestListViewForm.ShowDialog();
+        }
+
+        private void bookingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bookingListingForm = new BookingListingForm();
+            bookingListingForm.ShowDialog();   
         }
     }
 }

@@ -66,7 +66,6 @@
     <Compile Include="business\Account.cs" />
     <Compile Include="business\Booking.cs" />
     <Compile Include="business\BookingController.cs" />
-    <Compile Include="business\Employee.cs" />
     <Compile Include="business\Guest.cs" />
     <Compile Include="business\GuestController.cs" />
     <Compile Include="business\Receptionist.cs" />
@@ -94,6 +93,12 @@
     <Compile Include="presentation\BookingForm.Designer.cs">
       <DependentUpon>BookingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="presentation\BookingListingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentation\BookingListingForm.Designer.cs">
+      <DependentUpon>BookingListingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="presentation\DashBoardMDIParent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentation\BookingForm.resx">
       <DependentUpon>BookingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentation\BookingListingForm.resx">
+      <DependentUpon>BookingListingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentation\DashBoardMDIParent.resx">
       <DependentUpon>DashBoardMDIParent.cs</DependentUpon>
@@ -154,6 +162,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="debug\edit.png" />
+    <Content Include="debug\icons8-edit-50.png" />
     <Content Include="PhumlaKamnandiDatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -174,5 +184,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

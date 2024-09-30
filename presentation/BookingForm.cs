@@ -18,7 +18,7 @@ namespace PhumlaKamnandi2024.presentation
         private GuestController guestController;
         private Guest aGuest;
         private BookingController bookingController;
-        private Collection<Guest> guestCollection;
+        //private Collection<Guest> guestCollection;
         private int selectedAdult = 1;
         private int selectedKids = 0;
         #endregion
@@ -123,6 +123,34 @@ namespace PhumlaKamnandi2024.presentation
             }
         }
 
+        private void HideAll(bool value)
+        {
+            checkIn_lbl.Visible = value;
+            checkOut_lbl.Visible = value;
+            dateTimePicker1.Visible = value;
+            dateTimePicker2.Visible = value;
+
+            serch_button.Visible = value;
+
+            listView1.Visible = value;
+
+            label1.Visible = value;
+            roomDisplay.Visible = value;
+
+            adults_lbl.Visible = value;
+            kids_lbl.Visible = value;
+            adults_txt_num.Visible = value;
+            kids_txt_num.Visible = value;
+
+            requests_lbl.Visible = value;
+            request_txt.Visible = value;
+
+            proceed_btn.Visible = value;
+
+            newGuest_btn.Visible = value;
+            existing_btn.Visible = value;
+        }
+
         private void ClearAllFields()
         {
             // Clear New Guest Fields
@@ -137,15 +165,10 @@ namespace PhumlaKamnandi2024.presentation
             // Clear Existing Guest Fields
             signIn__idi_txt.Clear();
 
-            // Reset combo boxes for adults and kids
-            adults_combo_select.SelectedIndex = -1; 
-            kids_combo_select.SelectedIndex = -1; 
+            
 
             // Clear room list view selection
             listView1.Items.Clear();
-
-            // Hide confirmation text box
-            confirmation_textBox.Clear();
 
             // Reset radio buttons
             newGuest_btn.Checked = false;
@@ -170,23 +193,11 @@ namespace PhumlaKamnandi2024.presentation
             bookingController = new BookingController();
             guestController = new GuestController();
 
-            // Populate adults ComboBox
-            adults_combo_select.Items.Clear();
-            for (int i = 1; i <= 4; i++)
-            {
-                adults_combo_select.Items.Add(i.ToString());
-            }
-
-            // Populate kids ComboBox
-            kids_combo_select.Items.Clear();
-            for (int i = 0; i <4; i++)
-            {
-                kids_combo_select.Items.Add(i.ToString());
-            }
-
-            confirmation_textBox.Visible = false;
-            confirmation_textBox.ReadOnly = true;
             Exit_done_button.Visible = false;
+
+            listView1.View = View.List;
+            listView2.View = View.List;
+            listView2.Visible = false;
 
             newGuest_btn.Enabled = false;
             existing_btn.Enabled = false;
@@ -213,13 +224,11 @@ namespace PhumlaKamnandi2024.presentation
         #region Buttons
         private void proceed_btn_Click(object sender, EventArgs e)
         {
-            // Check if at least 1 adult is selected
-            if (adults_combo_select.SelectedItem == null || int.Parse(adults_combo_select.SelectedItem.ToString()) < 1)
+            // Validate the guest counts
+            if (!ValidateGuestCounts())
             {
-                MessageBox.Show("Please select at least 1 adult to proceed.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Prevent further execution if no adult is selected
+                return; // cannot proceed if validation fails
             }
-
             newGuest_btn.Enabled = true;
             existing_btn.Enabled = true;
 
@@ -234,8 +243,9 @@ namespace PhumlaKamnandi2024.presentation
 
         private void signin_Click(object sender, EventArgs e)
         {
-            // Validate the ID number
-            if (!ValidateGuestDetails())
+
+            // Validate the ID number and guest counts
+            if (!ValidateGuestDetails() || !ValidateGuestCounts())
             {
                 return; // Stop the registration if the validation fails
             }
@@ -249,17 +259,32 @@ namespace PhumlaKamnandi2024.presentation
             //MessageBox.Show("A guest is added");
             Booking newBooking = bookingController.CreateBooking(aGuest.ID, roomDisplay.Text, selectedAdult, selectedKids, dateTimePicker1.Value, dateTimePicker2.Value, request_txt.Text);
 
-            confirmation_textBox.Visible = true;
             Exit_done_button.Visible = true;
 
-            confirmation_textBox.Text = $"Booking ID: {newBooking.BookingID}\n" +
-                                $"Guest ID: {newBooking.GuestID}\n" +
-                                $"Room No: {newBooking.RoomNum}\n" +
-                                $"Adults: {newBooking.NumAdults}, Children: {newBooking.NumChildren}\n" +
-                                $"Check-In: {newBooking.CheckInDate.ToShortDateString()}\n" +
-                                $"Check-Out: {newBooking.CheckOutDate.ToShortDateString()}\n" +
-                                $"Special Request: {newBooking.SpecialRequest}";
+            listView2.Visible = true;
 
+            ListViewItem item = new ListViewItem($"Booking ID: {newBooking.BookingID}\n\n ");
+            listView2.Items.Add(item);
+
+            item = new ListViewItem($"Guest ID: {newBooking.GuestID}\n\n ");
+            listView2.Items.Add(item);
+
+            item = new ListViewItem($"Room No: {newBooking.RoomNum}\n\n ");
+            listView2.Items.Add(item);
+
+            item = new ListViewItem($"Adults: {newBooking.NumAdults}, Children: {newBooking.NumChildren}\n\n ");
+            listView2.Items.Add(item);
+
+            item = new ListViewItem($"Check-In: {newBooking.CheckInDate.ToShortDateString()}\n\n ");
+            listView2.Items.Add(item);
+
+            item = new ListViewItem($"Check-Out: {newBooking.CheckOutDate.ToShortDateString()}\n\n ");
+            listView2.Items.Add(item);
+
+            item = new ListViewItem($"Special Request: {newBooking.SpecialRequest}");
+            listView2.Items.Add(item);
+
+            HideAll(false);
         }
 
         private void serch_button_Click(object sender, EventArgs e)
@@ -281,36 +306,36 @@ namespace PhumlaKamnandi2024.presentation
         #endregion
 
         #region Combo Box select (Adults and Children
-        private void adults_combo_select_SelectedIndexChanged(object sender, EventArgs e)
+        private void adults_txt_num_TextChanged(object sender, EventArgs e)
         {
-            selectedAdult = int.Parse(adults_combo_select.SelectedItem.ToString());
-
-            int maxKids = 4 - selectedAdult;
-
-            // Clear the items in the kids combo box and repopulate with valid options
-            kids_combo_select.Items.Clear();
-            for (int i = 0; i <= maxKids; i++)
+            // Validate the input, ensuring only numbers are allowed
+            if (int.TryParse(adults_txt_num.Text, out int adults))
             {
-                kids_combo_select.Items.Add(i.ToString());
+                selectedAdult = adults;
             }
-            //kids_combo_select.SelectedIndex = 0;
+            else
+            {
+                MessageBox.Show("Please enter a valid number for adults.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                adults_txt_num.Clear();
+            }
         }
 
-        private void kids_combo_select_SelectedIndexChanged(object sender, EventArgs e)
+        private void kids_txt_num_TextChanged(object sender, EventArgs e)
         {
-            selectedKids = int.Parse(kids_combo_select.SelectedItem.ToString());
-
-            int maxAdults = 4 - selectedKids;
-
-            adults_combo_select.Items.Clear();
-            for (int i = 1; i <= maxAdults; i++)
+            // Validate the input, ensuring only numbers are allowed
+            if (int.TryParse(kids_txt_num.Text, out int kids))
             {
-                adults_combo_select.Items.Add(i.ToString());
+                selectedKids = kids;
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid number for kids.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                kids_txt_num.Clear();
             }
         }
         #endregion
 
-        #region Rooms List View
+        #region Room display text
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -323,6 +348,33 @@ namespace PhumlaKamnandi2024.presentation
         #endregion
 
         #region Validate
+        private bool ValidateGuestCounts()
+        {
+            // Validate Adults Count
+            if (!int.TryParse(adults_txt_num.Text, out int adults) || adults < 1 || adults > 4)
+            {
+                MessageBox.Show("Please enter a valid number of adults (1 - 4).", "Invalid Adult Count", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Validate Kids Count
+            if (!int.TryParse(kids_txt_num.Text, out int kids) || kids < 0 || kids > 3)
+            {
+                MessageBox.Show("Please enter a valid number of kids (0 - 3).", "Invalid Kids Count", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Check total count does not exceed limit
+            int totalGuests = adults + kids;
+            if (totalGuests > 4)
+            {
+                MessageBox.Show("The total number of guests (adults + kids) cannot exceed 4.", "Guest Limit Exceeded", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true; // All validations passed
+        }
+
         private bool ValidateID()
         {
             // Get the ID from the text box

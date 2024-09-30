@@ -52,6 +52,10 @@
             this.bookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -64,10 +68,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.guestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bookingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -254,6 +254,36 @@
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.loginToolStripMenuItem.Text = "Login";
             // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.guestsToolStripMenuItem,
+            this.bookingsToolStripMenuItem,
+            this.reportToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // guestsToolStripMenuItem
+            // 
+            this.guestsToolStripMenuItem.Name = "guestsToolStripMenuItem";
+            this.guestsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.guestsToolStripMenuItem.Text = "Guests";
+            this.guestsToolStripMenuItem.Click += new System.EventHandler(this.guestsToolStripMenuItem_Click);
+            // 
+            // bookingsToolStripMenuItem
+            // 
+            this.bookingsToolStripMenuItem.Name = "bookingsToolStripMenuItem";
+            this.bookingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bookingsToolStripMenuItem.Text = "Bookings";
+            this.bookingsToolStripMenuItem.Click += new System.EventHandler(this.bookingsToolStripMenuItem_Click);
+            // 
+            // reportToolStripMenuItem
+            // 
+            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reportToolStripMenuItem.Text = "Report";
+            // 
             // toolStrip
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -352,35 +382,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.guestsToolStripMenuItem,
-            this.bookingsToolStripMenuItem,
-            this.reportToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "View";
-            // 
-            // guestsToolStripMenuItem
-            // 
-            this.guestsToolStripMenuItem.Name = "guestsToolStripMenuItem";
-            this.guestsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.guestsToolStripMenuItem.Text = "Guests";
-            this.guestsToolStripMenuItem.Click += new System.EventHandler(this.guestsToolStripMenuItem_Click);
-            // 
-            // bookingsToolStripMenuItem
-            // 
-            this.bookingsToolStripMenuItem.Name = "bookingsToolStripMenuItem";
-            this.bookingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.bookingsToolStripMenuItem.Text = "Bookings";
-            // 
-            // reportToolStripMenuItem
-            // 
-            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reportToolStripMenuItem.Text = "Report";
             // 
             // DashBoardMDIParent
             // 
