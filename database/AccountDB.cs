@@ -82,8 +82,8 @@ namespace PhumlaKamnandi2024.database
                     account = new Account();
                     account.AccountID = Convert.ToString(myRow["AccountID"]);
                     account.GuestID = Convert.ToString(myRow["GuestID"]);
-                    account.CreditCardNo = Convert.ToString(myRow["CCNo"]);
-                    account.CardExpDate = Convert.ToString(myRow["CCDate"]);
+                    account.CreditCardNo = Convert.ToString(myRow["CreditCardNo"]);
+                    account.CardExpDate = Convert.ToString(myRow["CardExpDate"]);
                     account.Balance = Convert.ToDecimal(myRow["Balance"]);
                     accounts.Add(account);
 
@@ -162,7 +162,7 @@ namespace PhumlaKamnandi2024.database
             param = new SqlParameter("@GuestID", SqlDbType.NVarChar, 13, "GuestID");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@CrediCardNo", SqlDbType.NVarChar, 16, "CrediCardNo");
+            param = new SqlParameter("@CreditCardNo", SqlDbType.NVarChar, 16, "CreditCardNo");
             daMain.InsertCommand.Parameters.Add(param);
 
             param = new SqlParameter("@CardExpDate", SqlDbType.NVarChar, 7, "CardExpDate");
@@ -226,14 +226,14 @@ namespace PhumlaKamnandi2024.database
         private void Create_INSERT_Command(Account aAccount)
         {
 
-            daMain.InsertCommand = new SqlCommand("INSERT into Account (AccountID, GuestID, CreditCardNo, CardExpDate, Balance) VALUES (@AccountID, @GuestID, @CrediCardNo, @CardExpDate, @Balance)", cnMain);
+            daMain.InsertCommand = new SqlCommand("INSERT into Account (AccountID, GuestID, CreditCardNo, CardExpDate, Balance) VALUES (@AccountID, @GuestID, @CreditCardNo, @CardExpDate, @Balance)", cnMain);
             Build_INSERT_Parameters(aAccount);
         }
 
         private void Create_UPDATE_Command(Account aAccount)
         {
 
-            daMain.UpdateCommand = new SqlCommand("UPDATE Account SET AccountID = @AccountID, GuestID = @GuestID, CrediCardNo = @CrediCardNo, CardExpDate = @CardExpDate, Balance = @Balance " + "WHERE AccountID = @AccountID", cnMain);
+            daMain.UpdateCommand = new SqlCommand("UPDATE Account SET AccountID = @AccountID, GuestID = @GuestID, CreditCardNo = @CreditCardNo, CardExpDate = @CardExpDate, Balance = @Balance " + "WHERE AccountID = @AccountID", cnMain);
             Build_UPDATE_Parameters(aAccount);
         }
 

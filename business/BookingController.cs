@@ -190,7 +190,7 @@ namespace PhumlaKamnandi2024.business
         public string GenerateUniqueBookingID()
         {
             // Unique ID generated based on current time + counter
-            string uniqueID = "B" + DateTime.Now.ToString("yyyyMMdd") + currentReferenceNumber.ToString("D3");
+            string uniqueID = "C" + DateTime.Now.ToString("yyyyMMdd") + currentReferenceNumber.ToString("D2");
             currentReferenceNumber++; // Increment counter for uniqueness
             return uniqueID;
         }
