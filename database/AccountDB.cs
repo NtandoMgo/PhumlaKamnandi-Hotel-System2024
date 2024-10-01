@@ -68,7 +68,6 @@ namespace PhumlaKamnandi2024.database
             return $"{prefix}{maxID.ToString("D4")}";  // Format as 'A0001', 'A0002', etc.
         }
 
-
         private void Add2Collection(string table)
         {
             DataRow myRow = null;

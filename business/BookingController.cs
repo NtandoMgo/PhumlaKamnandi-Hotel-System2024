@@ -189,10 +189,11 @@ namespace PhumlaKamnandi2024.business
         #region Unique Booking ID and Add a booking
         public string GenerateUniqueBookingID()
         {
-            // Unique ID generated based on current time + counter
-            string uniqueID = "C" + DateTime.Now.ToString("yyyyMMdd") + currentReferenceNumber.ToString("D2");
-            currentReferenceNumber++; // Increment counter for uniqueness
-            return uniqueID;
+            //// Unique ID generated based on current time + counter
+            //string uniqueID = "C" + DateTime.Now.ToString("yyyyMMdd") + currentReferenceNumber.ToString("D2");
+            //currentReferenceNumber++; // Increment counter for uniqueness
+            //return uniqueID;
+            return bookingDB.GenerateBookingID();
         }
 
         public Booking CreateBooking(string guestID, string roomNo, int numAdults, int numChildren, DateTime checkIn, DateTime checkOut, string specialRequest)

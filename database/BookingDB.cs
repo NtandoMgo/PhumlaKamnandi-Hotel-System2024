@@ -32,6 +32,41 @@ namespace PhumlaKamnandi2024.database
         #endregion
 
         #region Utility Methods
+        public string GenerateBookingID()
+        {
+            string prefix = "B";  // Assuming 'B' as the prefix for BookingID
+            int maxID = 0;
+
+            // Iterate over the dataset to find the highest numeric BookingID
+            foreach (DataRow row in dsMain.Tables[table1].Rows)
+            {
+                if (row.RowState != DataRowState.Deleted)
+                {
+                    string currentID = row["BookingID"].ToString().Substring(1);  // Remove the prefix
+                    if (int.TryParse(currentID, out int currentNum))
+                    {
+                        if (currentNum > maxID)
+                        {
+                            maxID = currentNum;
+                        }
+                    }
+                }
+            }
+
+            // Increment and format the new ID
+            maxID += 1;
+
+            // Ensure BookingID is no longer than 10 characters
+            string newBookingID = $"{prefix}{maxID.ToString("D9")}";  // Format as 'B000000001', 'B000000002', etc.
+
+            if (newBookingID.Length > 10)
+            {
+                throw new Exception("Generated BookingID exceeds the maximum length of 10 characters.");
+            }
+
+            return newBookingID;
+        }
+
         public void RetrieveAllBookings()
         {
             dsMain.Tables["Booking"].Clear();
