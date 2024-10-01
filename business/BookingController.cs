@@ -20,6 +20,9 @@ namespace PhumlaKamnandi2024.business
         private Seasonality season;
         #endregion
 
+        #region property method
+        public Collection<Booking> GetAllBookings {  get { return bookings; } }
+        #endregion
         #region Constructor
         public BookingController()
         {
