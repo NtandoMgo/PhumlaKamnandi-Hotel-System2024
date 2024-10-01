@@ -246,6 +246,7 @@
             this.old_guest_signin_btn.TabIndex = 19;
             this.old_guest_signin_btn.Text = "Sign In";
             this.old_guest_signin_btn.UseVisualStyleBackColor = true;
+            this.old_guest_signin_btn.Click += new System.EventHandler(this.old_guest_signin_btn_Click);
             // 
             // signIn__idi_txt
             // 

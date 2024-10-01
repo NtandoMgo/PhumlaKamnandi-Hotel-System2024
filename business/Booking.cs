@@ -14,6 +14,7 @@ namespace PhumlaKamnandi2024.business
         private string guestID_, specialRequest_;
         private string roomNo_;
         private DateTime checkInDate_, checkOutDate_;
+        private decimal balance_ = 0;
         #endregion
 
         #region Property Methods
@@ -25,6 +26,8 @@ namespace PhumlaKamnandi2024.business
         public string SpecialRequest { get { return specialRequest_; } set { specialRequest_ = value; } }
         public DateTime CheckInDate { get { return checkInDate_; } set { checkInDate_ = value; } }
         public DateTime CheckOutDate { get {return checkOutDate_; } set {checkOutDate_ = value; } }
+
+        public decimal Balance { get { return balance_; } set { balance_ = value; } }
         #endregion
 
         #region Constructors

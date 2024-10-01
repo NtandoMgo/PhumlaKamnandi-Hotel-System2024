@@ -16,7 +16,7 @@ namespace PhumlaKamnandi2024.business
         public static int currentReferenceNumber;
         RoomController roomController;
 
-        enum Seasonality { Low = 550, Mid = 750, High = 995 }
+        enum Seasonality { Low = 600, Mid = 950, High = 1200 }
         private Seasonality season;
         #endregion
 
@@ -36,10 +36,10 @@ namespace PhumlaKamnandi2024.business
             Collection<Room> rooms = new Collection<Room>();
             foreach (Booking booking in bookings)
             {
-                bool isAvailable = (d1 <= booking.CheckInDate && d2 >= booking.CheckOutDate) || // Booking completely within the specific range
-                                    (d1 >= booking.CheckInDate && d2 <= booking.CheckOutDate) || // Booking completely covers the specific range if return tru-can't book
-                                    (d1 >= booking.CheckInDate && d1 < booking.CheckOutDate ||      // Partial overlap at the beggining
-                                    (d2 > booking.CheckInDate && d2 <= booking.CheckOutDate)); // Partial overlap at the end
+                bool isAvailable = (d1 <= booking.CheckInDate && d2 >= booking.CheckOutDate) ||
+                                    (d1 >= booking.CheckInDate && d2 <= booking.CheckOutDate) ||
+                                    (d1 >= booking.CheckInDate && d1 < booking.CheckOutDate ||
+                                    (d2 > booking.CheckInDate && d2 <= booking.CheckOutDate));
                 if (isAvailable)
                 {
                     string roomID = booking.RoomNum;
@@ -69,7 +69,6 @@ namespace PhumlaKamnandi2024.business
         #region Calc season Costs
         public void CalculateSeasonality(DateTime CheckIn, DateTime CheckOut)
         {
-            // Define the start and end dates for each season.
             DateTime lowSeasonStart = new DateTime(CheckIn.Year, 12, 1);
             DateTime lowSeasonEnd = new DateTime(CheckIn.Year, 12, 7);
             DateTime midSeasonStart = new DateTime(CheckIn.Year, 12, 8);
@@ -77,7 +76,6 @@ namespace PhumlaKamnandi2024.business
             DateTime highSeasonStart = new DateTime(CheckIn.Year, 12, 17);
             DateTime highSeasonEnd = new DateTime(CheckIn.Year, 12, 31);
 
-            // Check if the stay falls within the specified date ranges.
             if (CheckIn >= lowSeasonStart && CheckOut <= lowSeasonEnd)
             {
                 season = Seasonality.Low;
@@ -192,7 +190,7 @@ namespace PhumlaKamnandi2024.business
         public string GenerateUniqueBookingID()
         {
             // Unique ID generated based on current time + counter
-            string uniqueID = "B" + DateTime.Now.ToString("yyyyMMddHHmmssfff") + currentReferenceNumber.ToString("D3");
+            string uniqueID = "B" + DateTime.Now.ToString("yyyyMMdd") + currentReferenceNumber.ToString("D3");
             currentReferenceNumber++; // Increment counter for uniqueness
             return uniqueID;
         }
@@ -210,6 +208,7 @@ namespace PhumlaKamnandi2024.business
                 CheckOutDate = checkOut,
                 SpecialRequest = specialRequest
             };
+            newBooking.Balance = CalculateCost(checkIn, checkOut);
 
             // Insert the booking into the database
             DataMaintenance(newBooking, database.PhumlaKamnandiDB.DBOperation.Add);

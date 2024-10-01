@@ -70,14 +70,10 @@ namespace PhumlaKamnandi2024.database
             bool success;
             try
             {
-                //open the connection
                 cnMain.Open();
-                //***update the database table via the data adapter
                 SqlCommandBuilder commandBuilder = new SqlCommandBuilder(daMain);
                 daMain.Update(dsMain, table);
-                //---close the connection
                 cnMain.Close();
-                //refresh the dataset
                 FillDataSet(sqlLocal, table);
                 success = true;
             }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,11 @@ namespace PhumlaKamnandi2024.business
                 return accounts;
             }
         }
+
+        public string GetAccountID()
+        {
+            return accountDB.GenerateAccountID();
+        }
         #endregion
 
         #region Constructor
@@ -34,18 +40,9 @@ namespace PhumlaKamnandi2024.business
 
         #endregion
 
-        #region Methods
-        public int generateAccountID()
-        {
-            AccountDB accountDB = new AccountDB();
-            accounts = accountDB.AllAccounts;
-            return accounts.Count() + 1;
-        }
-        #endregion
-
         #region Database Communication.
 
-           public void DataMaintenance(Account aAccount, PhumlaKamnandiDB.DBOperation operation)
+        public void DataMaintenance(Account aAccount, PhumlaKamnandiDB.DBOperation operation)
         {
             int index = 0;
             accountDB.DataSetChange(aAccount, operation);
@@ -79,9 +76,9 @@ namespace PhumlaKamnandi2024.business
             AccountDB accountDB = new AccountDB();
             accounts = accountDB.AllAccounts;
             Account foundAccount = null;
-            if (accounts.Any(x => x.AccountID == aID))
+            if (accounts.Any(x => x.GuestID == aID))
             {
-                foundAccount = accounts.First(x => x.AccountID == aID);
+                foundAccount = accounts.First(x => x.GuestID == aID);
             }
             return foundAccount;
         }

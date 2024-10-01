@@ -33,12 +33,11 @@ namespace PhumlaKamnandi2024.business
             balance_ = 0;
         }
 
-        public Account(string accountId, string guestID, string cardNo, string cardExpDate, decimal balance)
+        public Account(string accountId, string guestID, string cardNo, string cardExpDate)
         {
             accountID_ =    accountId;
             guestID_ = guestID;
             cardExpDate_ = cardExpDate;
-            balance_ = balance;
         }
         #endregion
 

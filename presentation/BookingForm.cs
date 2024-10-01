@@ -18,7 +18,7 @@ namespace PhumlaKamnandi2024.presentation
         private GuestController guestController;
         private Guest aGuest;
         private BookingController bookingController;
-        //private Collection<Guest> guestCollection;
+        private AccountController accountController;
         private int selectedAdult;
         private int selectedKids;
         #endregion
@@ -192,6 +192,7 @@ namespace PhumlaKamnandi2024.presentation
         {
             bookingController = new BookingController();
             guestController = new GuestController();
+            accountController = new AccountController();
 
             Exit_done_button.Visible = false;
 
@@ -263,26 +264,17 @@ namespace PhumlaKamnandi2024.presentation
 
             listView2.Visible = true;
 
-            ListViewItem item = new ListViewItem($"Booking ID: {newBooking.BookingID}\n\n ");
-            listView2.Items.Add(item);
+            Account account = new Account(accountController.GetAccountID(), aGuest.ID, card_tct.Text, exp_txt.Text);
 
-            item = new ListViewItem($"Guest ID: {newBooking.GuestID}\n\n ");
-            listView2.Items.Add(item);
+            PrintConfirmation(newBooking);
 
-            item = new ListViewItem($"Room No: {newBooking.RoomNum}\n\n ");
-            listView2.Items.Add(item);
+            account.incrBalance(newBooking.Balance);
 
-            item = new ListViewItem($"Adults: {newBooking.NumAdults}, Children: {newBooking.NumChildren}\n\n ");
-            listView2.Items.Add(item);
+            bookingController.DataMaintenance(newBooking, database.PhumlaKamnandiDB.DBOperation.Add);
+            bookingController.FinalizeChanges(newBooking);
 
-            item = new ListViewItem($"Check-In: {newBooking.CheckInDate.ToShortDateString()}\n\n ");
-            listView2.Items.Add(item);
-
-            item = new ListViewItem($"Check-Out: {newBooking.CheckOutDate.ToShortDateString()}\n\n ");
-            listView2.Items.Add(item);
-
-            item = new ListViewItem($"Special Request: {newBooking.SpecialRequest}");
-            listView2.Items.Add(item);
+            accountController.DataMaintenance(account, database.PhumlaKamnandiDB.DBOperation.Add);
+            accountController.FinalizeChanges(account);
 
             HideAll(false);
         }
@@ -302,6 +294,40 @@ namespace PhumlaKamnandi2024.presentation
 
                 listView1.Items.Add(item);
             }
+        }
+
+        private void old_guest_signin_btn_Click(object sender, EventArgs e)
+        {
+            // Find if the ID of the guest does exist
+            string guestID = signIn__idi_txt.Text;
+            if (string.IsNullOrEmpty(guestID))
+            {
+                MessageBox.Show("Please enter a guest ID.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
+            aGuest = guestController.Find(guestID);
+            if (aGuest == null)
+            {
+                MessageBox.Show("No guest found with this ID.", "Guest Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Booking newBooking = bookingController.CreateBooking(aGuest.ID, roomDisplay.Text, selectedAdult, selectedKids, dateTimePicker1.Value, dateTimePicker2.Value, request_txt.Text);
+
+            Account account = accountController.Find(aGuest.ID);
+
+            PrintConfirmation(newBooking);
+
+            account.incrBalance(newBooking.Balance);
+
+            bookingController.DataMaintenance(newBooking, database.PhumlaKamnandiDB.DBOperation.Add);
+            bookingController.FinalizeChanges(newBooking);
+
+            accountController.DataMaintenance(account, database.PhumlaKamnandiDB.DBOperation.Update);
+            accountController.FinalizeChanges(account);
+
+            HideAll(false);
         }
         #endregion
 
@@ -479,6 +505,44 @@ namespace PhumlaKamnandi2024.presentation
 
             // All validations passed
             return true;
+        }
+        #endregion
+
+        #region Print Receipt
+        private void PrintConfirmation(Booking newBooking)
+        {
+            Exit_done_button.Visible = true;
+
+            listView2.Visible = true;
+
+            ListViewItem item = new ListViewItem($"Booking ID: {newBooking.BookingID}\n\n ");
+            listView2.Items.Add(item);
+
+            item = new ListViewItem($"Guest ID: {newBooking.GuestID}\n\n ");
+            listView2.Items.Add(item);
+
+            item = new ListViewItem($"Room No: {newBooking.RoomNum}\n\n ");
+            listView2.Items.Add(item);
+
+            item = new ListViewItem($"Adults: {newBooking.NumAdults}, Children: {newBooking.NumChildren}\n\n ");
+            listView2.Items.Add(item);
+
+            item = new ListViewItem($"Check-In: {newBooking.CheckInDate.ToShortDateString()}\n\n ");
+            listView2.Items.Add(item);
+
+            item = new ListViewItem($"Check-Out: {newBooking.CheckOutDate.ToShortDateString()}\n\n ");
+            listView2.Items.Add(item);
+
+            item = new ListViewItem($"Special Request: {newBooking.SpecialRequest}");
+            listView2.Items.Add(item);
+
+            decimal bal = bookingController.CalculateCost(dateTimePicker1.Value, dateTimePicker2.Value);
+
+            item = new ListViewItem($"Duration of stay: {(dateTimePicker2.Value - dateTimePicker1.Value).Days} day(s)");
+            listView2.Items.Add(item);
+
+            item = new ListViewItem($"Balance: R{bal}");
+            listView2.Items.Add(item);
         }
         #endregion
     }

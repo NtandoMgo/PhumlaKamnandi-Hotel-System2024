@@ -44,10 +44,30 @@ namespace PhumlaKamnandi2024.database
             Add2Collection(table1);
         }
 
-        public DataSet GetDataSet()
+        public string GenerateAccountID()
         {
-            return dsMain;
+            string prefix = "A";  // Assuming 'A' as the prefix for AccountID
+            int maxID = 0;
+
+            // Iterate over the dataset to find the highest numeric AccountID
+            foreach (DataRow row in dsMain.Tables[table1].Rows)
+            {
+                if (row.RowState != DataRowState.Deleted)
+                {
+                    string currentID = row["AccountID"].ToString().Substring(1); // Remove the prefix
+                    int currentNum = int.Parse(currentID);  // Parse the numeric part
+                    if (currentNum > maxID)
+                    {
+                        maxID = currentNum;
+                    }
+                }
+            }
+
+            // Increment and format the new ID
+            maxID += 1;
+            return $"{prefix}{maxID.ToString("D4")}";  // Format as 'A0001', 'A0002', etc.
         }
+
 
         private void Add2Collection(string table)
         {
@@ -78,8 +98,8 @@ namespace PhumlaKamnandi2024.database
             {
                 aRow["AccountID"] = aAccount.AccountID;
                 aRow["GuestID"] = aAccount.GuestID;
-                aRow["CCNo"] = aAccount.CreditCardNo;
-                aRow["CCDate"] = aAccount.CardExpDate;
+                aRow["CreditCardNo"] = aAccount.CreditCardNo;
+                aRow["CardExpDate"] = aAccount.CardExpDate;
                 aRow["Balance"] = aAccount.Balance;
             }
         }
@@ -206,14 +226,14 @@ namespace PhumlaKamnandi2024.database
         private void Create_INSERT_Command(Account aAccount)
         {
 
-            daMain.InsertCommand = new SqlCommand("INSERT into Account (AccountID, GuestID, CCNo, CCDate, Balance) VALUES (@AccountID, @GuestID, @CCNo, @CCDate, @Balance)", cnMain);
+            daMain.InsertCommand = new SqlCommand("INSERT into Account (AccountID, GuestID, CreditCardNo, CardExpDate, Balance) VALUES (@AccountID, @GuestID, @CrediCardNo, @CardExpDate, @Balance)", cnMain);
             Build_INSERT_Parameters(aAccount);
         }
 
         private void Create_UPDATE_Command(Account aAccount)
         {
 
-            daMain.UpdateCommand = new SqlCommand("UPDATE Account SET AccountID = @AccountID, GuestID = @GuestID, CCNo = @CCNo, CCDate = @CCDate, Balance = @Balance " + "WHERE AccountID = @AccountID", cnMain);
+            daMain.UpdateCommand = new SqlCommand("UPDATE Account SET AccountID = @AccountID, GuestID = @GuestID, CrediCardNo = @CrediCardNo, CardExpDate = @CardExpDate, Balance = @Balance " + "WHERE AccountID = @AccountID", cnMain);
             Build_UPDATE_Parameters(aAccount);
         }
 
