@@ -35,18 +35,18 @@
             this.cancel_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.bookind_id_txt = new System.Windows.Forms.TextBox();
+            this.guest_id_txt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.roomNum_xtx = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.new_bal_txt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.requests_txt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +57,7 @@
             this.bookingsDataGridView.Name = "bookingsDataGridView";
             this.bookingsDataGridView.Size = new System.Drawing.Size(776, 183);
             this.bookingsDataGridView.TabIndex = 0;
+            this.bookingsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookingsDataGridView_CellContentClick);
             // 
             // updateBtn
             // 
@@ -67,6 +68,7 @@
             this.updateBtn.TabIndex = 1;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // edit_btn
             // 
@@ -77,6 +79,7 @@
             this.edit_btn.Size = new System.Drawing.Size(80, 58);
             this.edit_btn.TabIndex = 2;
             this.edit_btn.UseVisualStyleBackColor = true;
+            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
             // cancel_btn
             // 
@@ -105,22 +108,23 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 5;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // textBox1
+            // bookind_id_txt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(602, 231);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 6;
+            this.bookind_id_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookind_id_txt.Location = new System.Drawing.Point(602, 231);
+            this.bookind_id_txt.Name = "bookind_id_txt";
+            this.bookind_id_txt.Size = new System.Drawing.Size(100, 26);
+            this.bookind_id_txt.TabIndex = 6;
             // 
-            // textBox2
+            // guest_id_txt
             // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(624, 263);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(78, 26);
-            this.textBox2.TabIndex = 7;
+            this.guest_id_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guest_id_txt.Location = new System.Drawing.Point(624, 263);
+            this.guest_id_txt.Name = "guest_id_txt";
+            this.guest_id_txt.Size = new System.Drawing.Size(78, 26);
+            this.guest_id_txt.TabIndex = 7;
             // 
             // label2
             // 
@@ -159,14 +163,15 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 11;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
-            // textBox3
+            // roomNum_xtx
             // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(624, 295);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(78, 26);
-            this.textBox3.TabIndex = 12;
+            this.roomNum_xtx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomNum_xtx.Location = new System.Drawing.Point(624, 295);
+            this.roomNum_xtx.Name = "roomNum_xtx";
+            this.roomNum_xtx.Size = new System.Drawing.Size(78, 26);
+            this.roomNum_xtx.TabIndex = 12;
             // 
             // label5
             // 
@@ -178,23 +183,23 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Room Num:";
             // 
-            // textBox4
+            // new_bal_txt
             // 
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(624, 327);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(78, 26);
-            this.textBox4.TabIndex = 14;
+            this.new_bal_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.new_bal_txt.Location = new System.Drawing.Point(624, 327);
+            this.new_bal_txt.Name = "new_bal_txt";
+            this.new_bal_txt.Size = new System.Drawing.Size(78, 26);
+            this.new_bal_txt.TabIndex = 14;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(524, 334);
+            this.label6.Location = new System.Drawing.Point(508, 330);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 19);
+            this.label6.Size = new System.Drawing.Size(110, 19);
             this.label6.TabIndex = 15;
-            this.label6.Text = "New Balance:";
+            this.label6.Text = "Current Balance:";
             // 
             // label7
             // 
@@ -206,14 +211,14 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "New Request:";
             // 
-            // textBox5
+            // requests_txt
             // 
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(155, 334);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 56);
-            this.textBox5.TabIndex = 16;
+            this.requests_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requests_txt.Location = new System.Drawing.Point(155, 334);
+            this.requests_txt.Multiline = true;
+            this.requests_txt.Name = "requests_txt";
+            this.requests_txt.Size = new System.Drawing.Size(200, 56);
+            this.requests_txt.TabIndex = 16;
             // 
             // BookingListingForm
             // 
@@ -221,17 +226,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.requests_txt);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.new_bal_txt);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.roomNum_xtx);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.guest_id_txt);
+            this.Controls.Add(this.bookind_id_txt);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cancel_btn);
@@ -239,7 +244,9 @@
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.bookingsDataGridView);
             this.Name = "BookingListingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BookingListingForm";
+            this.Load += new System.EventHandler(this.BookingListingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bookingsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -254,17 +261,17 @@
         private System.Windows.Forms.Button cancel_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox bookind_id_txt;
+        private System.Windows.Forms.TextBox guest_id_txt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox roomNum_xtx;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox new_bal_txt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox requests_txt;
     }
 }

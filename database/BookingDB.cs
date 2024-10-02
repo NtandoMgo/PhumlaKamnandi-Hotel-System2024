@@ -145,7 +145,7 @@ namespace PhumlaKamnandi2024.database
                 myRow = myRow_loopVariable;
                 if (!(myRow.RowState == DataRowState.Deleted))
                 {
-                    if (aBooking.BookingID == Convert.ToString(dsMain.Tables[table].Rows[rowIndex]["ReferenceNumber"]))
+                    if (aBooking.BookingID == Convert.ToString(dsMain.Tables[table].Rows[rowIndex]["BookingID"]))
                     {
                         returnValue = rowIndex;
                     }

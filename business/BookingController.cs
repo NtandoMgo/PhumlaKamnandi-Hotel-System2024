@@ -123,31 +123,31 @@ namespace PhumlaKamnandi2024.business
         public void DataMaintenance(Booking aBooking, PhumlaKamnandiDB.DBOperation operation)
         {
             int index = 0;
-            //perform a given database operation to the dataset in meory; 
             bookingDB.DataSetChange(aBooking, operation);
-            //perform operations on the collection
+            bookingDB.UpdateDataSource(aBooking);
+
+            bookingDB.RetrieveAllBookings();  // Refresh data from the database
+            bookings = bookingDB.AllBookings;   // Update local collection
+
             switch (operation)
             {
                 case PhumlaKamnandiDB.DBOperation.Add:
-                    //*** Add the employee to the Collection
                     bookings.Add(aBooking);
                     break;
                 case PhumlaKamnandiDB.DBOperation.Update:
                     index = FindIndex(aBooking);
-                    bookings[index] = aBooking;  // replace booking at this index with the updated booking
+                    bookings[index] = aBooking;
                     break;
                 case PhumlaKamnandiDB.DBOperation.Delete:
-                    index = FindIndex(aBooking);  // find the index of the specific booking in collection
-                    bookings.RemoveAt(index);  // remove that booking from the collection
+                    index = FindIndex(aBooking);
+                    bookings.RemoveAt(index); 
                     break;
 
             }
         }
 
-        //***Commit the changes to the database
         public bool FinalizeChanges(Booking booking)
         {
-            //***call the BookingDB method that will commit the changes to the database
             return bookingDB.UpdateDataSource(booking);
         }
         #endregion
