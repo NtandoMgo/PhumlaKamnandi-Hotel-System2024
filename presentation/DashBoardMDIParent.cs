@@ -17,6 +17,7 @@ namespace PhumlaKamnandi2024.presentation
         private BookingForm bookingForm;
         private GuestListViewForm guestListViewForm;
         private BookingListingForm bookingListingForm;
+        private AccountsListingForm accountsListingForm;
         #endregion
 
         public DashBoardMDIParent()
@@ -126,6 +127,12 @@ namespace PhumlaKamnandi2024.presentation
         {
             bookingListingForm = new BookingListingForm();
             bookingListingForm.ShowDialog();   
+        }
+
+        private void reportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            accountsListingForm = new AccountsListingForm();
+            accountsListingForm.ShowDialog();
         }
     }
 }

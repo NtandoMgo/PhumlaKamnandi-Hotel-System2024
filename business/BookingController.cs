@@ -111,7 +111,7 @@ namespace PhumlaKamnandi2024.business
                     cost = daysOfStay * (int)season;
                     break;
                 default:
-                    cost = daysOfStay * 100;
+                    cost = daysOfStay * 250;
                     break;
             }
 

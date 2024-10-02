@@ -17,6 +17,7 @@ namespace PhumlaKamnandi2024.presentation
         #region Data Fields
         private BookingController bookingController;
         private Collection<Booking> bookings;
+        private AccountController accountController;
         private FormState currentState;
         private DateTime originalCheckInDate;
         private DateTime originalCheckOutDate;
@@ -117,6 +118,15 @@ namespace PhumlaKamnandi2024.presentation
             //bookingController.FinalizeChanges(updatedBooking);
 
             RefreshDataGrid();
+
+            accountController = new AccountController();
+            Account anAccount = accountController.Find(aGuestId);
+            anAccount.decrBalance(bookingController.CalculateCost(originalCheckInDate, originalCheckOutDate));
+            anAccount.incrBalance(bookingController.CalculateCost(dateTimePicker1.Value, dateTimePicker2.Value));
+
+            accountController.DataMaintenance(anAccount, database.PhumlaKamnandiDB.DBOperation.Update);
+
+            MessageBox.Show("Booking Updated.");
 
             currentState = FormState.View;
             ClearAll();

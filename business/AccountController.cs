@@ -46,6 +46,10 @@ namespace PhumlaKamnandi2024.business
         {
             int index = 0;
             accountDB.DataSetChange(aAccount, operation);
+            accountDB.UpdateDataSource(aAccount);
+
+            accountDB.GetAllAccounts();
+            accounts = accountDB.AllAccounts;
             switch (operation)
             {
                 case PhumlaKamnandiDB.DBOperation.Add:
