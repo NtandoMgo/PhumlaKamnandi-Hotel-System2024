@@ -67,5 +67,10 @@ namespace PhumlaKamnandi2024.presentation
                 MessageBox.Show("No guest found with the provided Guest ID.", "Guest Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

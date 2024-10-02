@@ -3,31 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_STUDENT_DESKTOP_FINALE_PHUMLAKAMNANDI_HOTEL_SYSTEM2024_PHUMLAKAMNANDIDATABASE.MDF/True/SqlTable/dbo.Account.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|c:\\users\\student\\desktop\\finale\\phumlakamnandi-hotel-system2024\\presentation\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:presentation\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|c:\\users\\student\\desktop\\finale\\phumlakamnandi-hotel-system2024\\presentation\\accountslistingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:presentation\\accountslistingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|c:\\users\\student\\desktop\\finale\\phumlakamnandi-hotel-system2024\\presentation\\dashboardmdiparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:presentation\\dashboardmdiparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|c:\\users\\student\\desktop\\finale\\phumlakamnandi-hotel-system2024\\presentation\\accountslistingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:presentation\\accountslistingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|c:\\users\\student\\desktop\\finale\\phumlakamnandi-hotel-system2024\\presentation\\dashboardmdiparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:presentation\\dashboardmdiparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\bookinglistingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:presentation\\bookinglistingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|c:\\users\\student\\desktop\\finale\\phumlakamnandi-hotel-system2024\\business\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:business\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|c:\\users\\student\\desktop\\finale\\phumlakamnandi-hotel-system2024\\business\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:business\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\bookinglistingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:presentation\\bookinglistingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|c:\\users\\student\\desktop\\finale\\phumlakamnandi-hotel-system2024\\business\\receptioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:business\\receptioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,93 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "dbo.Account [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_STUDENT_DESKTOP_FINALE_PHUMLAKAMNANDI_HOTEL_SYSTEM2024_PHUMLAKAMNANDIDATABASE.MDF/True/SqlTable/dbo.Account.sql",
-              "ToolTip": "dbo.Account [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-10-02T11:55:15.619Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AccountsListingForm.cs",
-              "DocumentMoniker": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\AccountsListingForm.cs",
-              "RelativeDocumentMoniker": "presentation\\AccountsListingForm.cs",
-              "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\AccountsListingForm.cs",
-              "RelativeToolTip": "presentation\\AccountsListingForm.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAADwv0UAAAAFAAAAAAAAAA==",
+              "Title": "DashBoardMDIParent.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\DashBoardMDIParent.cs",
+              "RelativeDocumentMoniker": "presentation\\DashBoardMDIParent.cs",
+              "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\DashBoardMDIParent.cs",
+              "RelativeToolTip": "presentation\\DashBoardMDIParent.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAAALwAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T11:15:17.717Z",
+              "WhenOpened": "2024-10-02T12:38:55.716Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AccountsListingForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\AccountsListingForm.cs",
-              "RelativeDocumentMoniker": "presentation\\AccountsListingForm.cs",
-              "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\AccountsListingForm.cs [Design]",
-              "RelativeToolTip": "presentation\\AccountsListingForm.cs [Design]",
+              "Title": "DashBoardMDIParent.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\DashBoardMDIParent.cs",
+              "RelativeDocumentMoniker": "presentation\\DashBoardMDIParent.cs",
+              "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\DashBoardMDIParent.cs [Design]",
+              "RelativeToolTip": "presentation\\DashBoardMDIParent.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T11:09:44.053Z",
+              "WhenOpened": "2024-10-02T12:57:19.469Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BookingController.cs",
-              "DocumentMoniker": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\business\\BookingController.cs",
-              "RelativeDocumentMoniker": "business\\BookingController.cs",
-              "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\business\\BookingController.cs",
-              "RelativeToolTip": "business\\BookingController.cs",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T11:05:39.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\business\\AccountController.cs",
-              "RelativeDocumentMoniker": "business\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\business\\AccountController.cs",
-              "RelativeToolTip": "business\\AccountController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAqwDMAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T11:05:22.498Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "BookingListingForm.cs",
-              "DocumentMoniker": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\BookingListingForm.cs",
-              "RelativeDocumentMoniker": "presentation\\BookingListingForm.cs",
-              "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\BookingListingForm.cs",
-              "RelativeToolTip": "presentation\\BookingListingForm.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAGcAAABAAAAAAAAAAA==",
+              "Title": "ReceptionController.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\business\\ReceptionController.cs",
+              "RelativeDocumentMoniker": "business\\ReceptionController.cs",
+              "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\business\\ReceptionController.cs",
+              "RelativeToolTip": "business\\ReceptionController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T14:02:39.124Z",
+              "WhenOpened": "2024-10-02T13:10:16.657Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BookingListingForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\BookingListingForm.cs",
-              "RelativeDocumentMoniker": "presentation\\BookingListingForm.cs",
-              "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\BookingListingForm.cs [Design]",
-              "RelativeToolTip": "presentation\\BookingListingForm.cs [Design]",
+              "DocumentIndex": 0,
+              "Title": "LogInForm.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\LogInForm.cs",
+              "RelativeDocumentMoniker": "presentation\\LogInForm.cs",
+              "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\LogInForm.cs",
+              "RelativeToolTip": "presentation\\LogInForm.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwDIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T13:57:49.03Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-02T12:12:40.145Z",
+              "EditorCaption": ""
             }
           ]
         }

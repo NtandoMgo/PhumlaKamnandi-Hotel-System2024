@@ -25,6 +25,15 @@ namespace PhumlaKamnandi2024.business
         }
         #endregion
 
+        #region Authentication Method
+        public bool Authenticate(string employeeId, string password)
+        {
+            // Check if the employeeId exists and the password matches
+            var receptionist = receptionists.FirstOrDefault(r => r.ID == employeeId);
+            return receptionist != null && receptionist.Password == password;
+        }
+        #endregion
+
         #region Constructor
         public ReceptionController()
         {

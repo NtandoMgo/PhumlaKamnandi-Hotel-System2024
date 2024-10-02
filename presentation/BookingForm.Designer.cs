@@ -275,6 +275,7 @@
             this.back_btn.TabIndex = 22;
             this.back_btn.Text = "Back";
             this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
             // listView1
             // 

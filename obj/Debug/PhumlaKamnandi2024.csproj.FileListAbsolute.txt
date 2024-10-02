@@ -29,3 +29,4 @@ C:\Users\Student\Desktop\FINALE\PhumlaKamnandi-Hotel-System2024\obj\Debug\Phumla
 C:\Users\Student\Desktop\finale\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.presentation.GuestListViewForm.resources
 C:\Users\Student\Desktop\finale\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.presentation.BookingListingForm.resources
 C:\Users\Student\Desktop\finale\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.presentation.AccountsListingForm.resources
+C:\Users\Student\Desktop\finale\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.presentation.LogInForm.resources

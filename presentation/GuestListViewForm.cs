@@ -82,6 +82,7 @@ namespace PhumlaKamnandi2024.presentation
         }
         #endregion
 
+        #region Click Events
         private void GuestListViewForm_Load(object sender, EventArgs e)
         {
             currentState = FormState.View;
@@ -115,5 +116,11 @@ namespace PhumlaKamnandi2024.presentation
                 textBox4.Text = selectedRow.Cells["Address"].Value.ToString();
             }
         }
+
+        private void cancelbutton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
     }
 }

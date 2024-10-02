@@ -329,6 +329,11 @@ namespace PhumlaKamnandi2024.presentation
 
             HideAll(false);
         }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
 
         #region Combo Box select (Adults and Children
@@ -545,5 +550,6 @@ namespace PhumlaKamnandi2024.presentation
             listView2.Items.Add(item);
         }
         #endregion
+
     }
 }

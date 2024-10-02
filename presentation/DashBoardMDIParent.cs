@@ -18,6 +18,11 @@ namespace PhumlaKamnandi2024.presentation
         private GuestListViewForm guestListViewForm;
         private BookingListingForm bookingListingForm;
         private AccountsListingForm accountsListingForm;
+        private LogInForm logInForm;
+
+        private bool isLoggedIn = false;
+
+        private string loggedInReceptionistId;
         #endregion
 
         public DashBoardMDIParent()
@@ -133,6 +138,75 @@ namespace PhumlaKamnandi2024.presentation
         {
             accountsListingForm = new AccountsListingForm();
             accountsListingForm.ShowDialog();
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //logInForm = new LogInForm();
+            //logInForm = new LogInForm();
+            //if (logInForm.ShowDialog() == DialogResult.OK && logInForm.IsAuthenticated)
+            //{
+            //    isLoggedIn = true;
+            //    UpdateMenuItems();
+            //}
+
+            if (isLoggedIn)
+            {
+                // If logged in, log out
+                isLoggedIn = false;
+                loginToolStripMenuItem.Text = "Login"; // Change text to Login
+                loginToolStripMenuItem.ForeColor = Color.Green;
+
+                Logout();
+
+                UpdateMenuItems();
+            }
+            else
+            {
+                logInForm = new LogInForm();
+                if (logInForm.ShowDialog() == DialogResult.OK && logInForm.IsAuthenticated)
+                {
+                    isLoggedIn = true;
+                    loginToolStripMenuItem.Text = "Logout";
+                    loginToolStripMenuItem.ForeColor = Color.Red;
+                    UpdateMenuItems();
+                }
+            }
+        }
+
+        #region methods
+        private void UpdateMenuItems()
+        {
+            bookingToolStripMenuItem.Enabled = isLoggedIn;
+            viewToolStripMenuItem.Enabled = isLoggedIn;
+
+            if (isLoggedIn)
+            {
+                stat_lbl.Text = $"Logged in as: {loggedInReceptionistId}";
+            }
+            else
+            {
+                stat_lbl.Text = "Not logged in";
+            }
+
+            //loginToolStripMenuItem.Enabled = !isLoggedIn; // Disable login if already logged in
+        }
+        #endregion
+
+        private void DashBoardMDIParent_Load(object sender, EventArgs e)
+        {
+            UpdateMenuItems();
+        }
+        private void Logout()
+        {
+            isLoggedIn = false;
+            UpdateMenuItems();
+        }
+
+        public void SetLoggedInReceptionist(string receptionistId)
+        {
+            loggedInReceptionistId = receptionistId;
+            UpdateMenuItems();
         }
     }
 }

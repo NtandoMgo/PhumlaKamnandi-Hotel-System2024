@@ -132,7 +132,11 @@ namespace PhumlaKamnandi2024.presentation
             ClearAll();
             ShowAll(false);
         }
-        
+
+        private void cancel_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
 
         private void bookingsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -180,7 +184,7 @@ namespace PhumlaKamnandi2024.presentation
             }
         }
 
-
+       
         #region Methods
         private void RefreshDataGrid()
         {

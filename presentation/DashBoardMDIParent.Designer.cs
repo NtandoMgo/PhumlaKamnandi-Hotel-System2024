@@ -68,6 +68,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.stat_lbl = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -265,30 +266,32 @@
             // guestsToolStripMenuItem
             // 
             this.guestsToolStripMenuItem.Name = "guestsToolStripMenuItem";
-            this.guestsToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.guestsToolStripMenuItem.Size = new System.Drawing.Size(160, 28);
             this.guestsToolStripMenuItem.Text = "Guests";
             this.guestsToolStripMenuItem.Click += new System.EventHandler(this.guestsToolStripMenuItem_Click);
             // 
             // bookingsToolStripMenuItem
             // 
             this.bookingsToolStripMenuItem.Name = "bookingsToolStripMenuItem";
-            this.bookingsToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.bookingsToolStripMenuItem.Size = new System.Drawing.Size(160, 28);
             this.bookingsToolStripMenuItem.Text = "Bookings";
             this.bookingsToolStripMenuItem.Click += new System.EventHandler(this.bookingsToolStripMenuItem_Click);
             // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(160, 28);
             this.reportToolStripMenuItem.Text = "Accounts";
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(69, 27);
             this.loginToolStripMenuItem.Text = "Login";
+            this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // toolStrip
             // 
@@ -389,11 +392,22 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // stat_lbl
+            // 
+            this.stat_lbl.AutoSize = true;
+            this.stat_lbl.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stat_lbl.Location = new System.Drawing.Point(391, 9);
+            this.stat_lbl.Name = "stat_lbl";
+            this.stat_lbl.Size = new System.Drawing.Size(50, 19);
+            this.stat_lbl.TabIndex = 4;
+            this.stat_lbl.Text = "label1";
+            // 
             // DashBoardMDIParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(731, 520);
+            this.Controls.Add(this.stat_lbl);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
@@ -401,6 +415,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "DashBoardMDIParent";
             this.Text = "DashBoardMDIParent";
+            this.Load += new System.EventHandler(this.DashBoardMDIParent_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
@@ -452,6 +467,7 @@
         private System.Windows.Forms.ToolStripMenuItem guestsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
+        private System.Windows.Forms.Label stat_lbl;
     }
 }
 
