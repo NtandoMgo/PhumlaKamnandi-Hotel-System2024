@@ -185,7 +185,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="debug\edit.png" />
+    <Content Include="debug\icons8-delete-100.png" />
     <Content Include="debug\icons8-edit-50.png" />
     <Content Include="PhumlaKamnandiDatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

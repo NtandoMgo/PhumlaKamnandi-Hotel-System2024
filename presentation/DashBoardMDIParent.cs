@@ -180,15 +180,6 @@ namespace PhumlaKamnandi2024.presentation
             bookingToolStripMenuItem.Enabled = isLoggedIn;
             viewToolStripMenuItem.Enabled = isLoggedIn;
 
-            if (isLoggedIn)
-            {
-                stat_lbl.Text = $"Logged in as: "+loggedInReceptionistId;
-            }
-            else
-            {
-                stat_lbl.Text = "Not logged in";
-            }
-
             //loginToolStripMenuItem.Enabled = !isLoggedIn; // Disable login if already logged in
         }
         #endregion

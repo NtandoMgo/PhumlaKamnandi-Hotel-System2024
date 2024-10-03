@@ -52,10 +52,16 @@ namespace PhumlaKamnandi2024.database
             try
             {
                 daMain = new SqlDataAdapter(aSQLstring, cnMain);
-                cnMain.Open();
+                if (cnMain.State != ConnectionState.Open)
+                {
+                    cnMain.Open();
+                }
                 dsMain.Clear();
                 daMain.Fill(dsMain, aTable);
-                cnMain.Close();
+                if (cnMain.State == ConnectionState.Open)
+                {
+                    cnMain.Close();
+                }
             }
             catch (Exception errObj)
             {
@@ -70,10 +76,16 @@ namespace PhumlaKamnandi2024.database
             bool success;
             try
             {
-                cnMain.Open();
+                if (cnMain.State != ConnectionState.Open)
+                {
+                    cnMain.Open();
+                }
                 SqlCommandBuilder commandBuilder = new SqlCommandBuilder(daMain);
                 daMain.Update(dsMain, table);
-                cnMain.Close();
+                if (cnMain.State == ConnectionState.Open)
+                {
+                    cnMain.Close();
+                }
                 FillDataSet(sqlLocal, table);
                 success = true;
             }

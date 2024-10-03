@@ -17,7 +17,6 @@ namespace PhumlaKamnandi2024.presentation
         #region Data Fields
         public bool IsAuthenticated { get; private set; } = false;
         ReceptionController receptionController;
-        string emplId;
         #endregion
 
         #region Constructor

@@ -34,30 +34,12 @@ namespace PhumlaKamnandi2024.database
         #region Utility Methods
         public string GenerateBookingID()
         {
-            string prefix = "B";  // Assuming 'B' as the prefix for BookingID
-            int maxID = 0;
+            string prefix = "B";
+            int maxID = GetMaxBookingID();
 
-            // Iterate over the dataset to find the highest numeric BookingID
-            foreach (DataRow row in dsMain.Tables[table1].Rows)
-            {
-                if (row.RowState != DataRowState.Deleted)
-                {
-                    string currentID = row["BookingID"].ToString().Substring(1);  // Remove the prefix
-                    if (int.TryParse(currentID, out int currentNum))
-                    {
-                        if (currentNum > maxID)
-                        {
-                            maxID = currentNum;
-                        }
-                    }
-                }
-            }
-
-            // Increment and format the new ID
             maxID += 1;
 
-            // Ensure BookingID is no longer than 10 characters
-            string newBookingID = $"{prefix}{maxID.ToString("D9")}";  // Format as 'B000000001', 'B000000002', etc.
+            string newBookingID = $"{prefix}{maxID:D9}"; // Format as 'B000000001'
 
             if (newBookingID.Length > 10)
             {
@@ -66,6 +48,50 @@ namespace PhumlaKamnandi2024.database
 
             return newBookingID;
         }
+
+
+        private int GetMaxBookingID()
+        {
+            int maxID = 0;
+
+            // SQL query to get the maximum BookingID
+            string query = "SELECT MAX(CAST(SUBSTRING(BookingID, 2, LEN(BookingID) - 1) AS INT)) FROM Booking";
+
+            // execute the query
+            using (SqlCommand command = new SqlCommand(query, cnMain))
+            {
+                try
+                {
+                    // Open the connection if it's not already open
+                    if (cnMain.State != ConnectionState.Open)
+                    {
+                        cnMain.Open();
+                    }
+
+                    // Execute the query and get the result
+                    object result = command.ExecuteScalar();
+
+                    if (result != DBNull.Value)
+                    {
+                        maxID = Convert.ToInt32(result);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error retrieving max BookingID: {ex.Message}");
+                }
+                finally
+                {
+                    if (cnMain.State == ConnectionState.Open)
+                    {
+                        cnMain.Close();
+                    }
+                }
+            }
+
+            return maxID;
+        }
+
 
         public void RetrieveAllBookings()
         {

@@ -27,7 +27,8 @@ namespace PhumlaKamnandi2024.presentation
         private enum FormState
         {
             View,
-            Edit
+            Edit,
+            Delete
         }
         #endregion
 
@@ -137,6 +138,38 @@ namespace PhumlaKamnandi2024.presentation
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {// Delete button
+            //bookingController.DataMaintenance()
+            //if (!(string.IsNullOrEmpty(bookind_id_txt.Text)))
+            //{
+            //    //var selectedRow = bookingsDataGridView.SelectedRows[0];
+            //    //string bookingIdToDelete = selectedRow.Cells["BookingID"].Value.ToString();
+            //    string bookingIdToDelete = bookind_id_txt.Text;
+
+            //    // Confirm deletion
+            //    var confirmResult = MessageBox.Show("Are you sure you want to delete this booking?",
+            //                                         "Confirm Delete",
+            //                                         MessageBoxButtons.YesNo,
+            //                                         MessageBoxIcon.Warning);
+            //    if (confirmResult == DialogResult.Yes)
+            //    {
+            //        Booking bookingToDelete = new Booking(aBookingId, aGuestId, aRoomNum, adults, kids, originalCheckInDate, originalCheckOutDate, requests);
+            //        bookingController.DataMaintenance(bookingToDelete, database.PhumlaKamnandiDB.DBOperation.Delete);
+
+            //        // Refresh the data grid
+            //        RefreshDataGrid();
+
+            //        MessageBox.Show("Booking deleted successfully.");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Please select a booking to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+        }
+
         #endregion
 
         private void bookingsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -184,7 +217,6 @@ namespace PhumlaKamnandi2024.presentation
             }
         }
 
-       
         #region Methods
         private void RefreshDataGrid()
         {

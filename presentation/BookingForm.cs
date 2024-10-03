@@ -244,7 +244,6 @@ namespace PhumlaKamnandi2024.presentation
 
         private void signin_Click(object sender, EventArgs e)
         {
-
             // Validate the ID number and guest counts
             if (!ValidateGuestDetails() || !ValidateGuestCounts())
             {
