@@ -149,6 +149,11 @@ namespace PhumlaKamnandi2024.presentation
 
             newGuest_btn.Visible = value;
             existing_btn.Visible = value;
+
+            id_lbl.Visible = value;
+            signIn__idi_txt.Visible= value;
+
+            old_guest_signin_btn.Visible= value;
         }
 
         private void ClearAllFields()
@@ -230,6 +235,13 @@ namespace PhumlaKamnandi2024.presentation
             {
                 return; // cannot proceed if validation fails
             }
+
+            if (string.IsNullOrEmpty(roomDisplay.Text))
+            {
+                MessageBox.Show("Please select a room before proceeding.", "Room Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             newGuest_btn.Enabled = true;
             existing_btn.Enabled = true;
 
@@ -550,5 +562,9 @@ namespace PhumlaKamnandi2024.presentation
         }
         #endregion
 
+        private void Exit_done_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
