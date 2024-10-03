@@ -158,6 +158,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="PhumlaKamnandiDatabaseDataSet.xsc">
       <DependentUpon>PhumlaKamnandiDatabaseDataSet.xsd</DependentUpon>
@@ -193,6 +194,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>PhumlaKamnandiDatabase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\pHUMLAKAMNANDI %283%29.png" />
+    <None Include="Resources\pHUMLAKAMNANDI %282%29.png" />
+    <None Include="Resources\pHUMLAKAMNANDI.png" />
+    <None Include="Resources\Luxury Hotel %281%29.png" />
+    <None Include="Resources\Luxury Hotel.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

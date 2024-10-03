@@ -182,7 +182,7 @@ namespace PhumlaKamnandi2024.presentation
 
             if (isLoggedIn)
             {
-                stat_lbl.Text = $"Logged in as: {loggedInReceptionistId}";
+                stat_lbl.Text = $"Logged in as: "+loggedInReceptionistId;
             }
             else
             {
@@ -207,6 +207,11 @@ namespace PhumlaKamnandi2024.presentation
         {
             loggedInReceptionistId = receptionistId;
             UpdateMenuItems();
+        }
+
+        private void stat_lbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
