@@ -68,6 +68,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.occupancyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -258,7 +260,8 @@
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.guestsToolStripMenuItem,
             this.bookingsToolStripMenuItem,
-            this.reportToolStripMenuItem});
+            this.reportToolStripMenuItem,
+            this.reportsToolStripMenuItem});
             this.viewToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(66, 27);
@@ -267,21 +270,21 @@
             // guestsToolStripMenuItem
             // 
             this.guestsToolStripMenuItem.Name = "guestsToolStripMenuItem";
-            this.guestsToolStripMenuItem.Size = new System.Drawing.Size(160, 28);
+            this.guestsToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.guestsToolStripMenuItem.Text = "Guests";
             this.guestsToolStripMenuItem.Click += new System.EventHandler(this.guestsToolStripMenuItem_Click);
             // 
             // bookingsToolStripMenuItem
             // 
             this.bookingsToolStripMenuItem.Name = "bookingsToolStripMenuItem";
-            this.bookingsToolStripMenuItem.Size = new System.Drawing.Size(160, 28);
+            this.bookingsToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.bookingsToolStripMenuItem.Text = "Bookings";
             this.bookingsToolStripMenuItem.Click += new System.EventHandler(this.bookingsToolStripMenuItem_Click);
             // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(160, 28);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.reportToolStripMenuItem.Text = "Accounts";
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
@@ -396,6 +399,21 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.occupancyToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // occupancyToolStripMenuItem
+            // 
+            this.occupancyToolStripMenuItem.Name = "occupancyToolStripMenuItem";
+            this.occupancyToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.occupancyToolStripMenuItem.Text = "Occupancy";
+            this.occupancyToolStripMenuItem.Click += new System.EventHandler(this.occupancyToolStripMenuItem_Click);
+            // 
             // DashBoardMDIParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,6 +481,8 @@
         private System.Windows.Forms.ToolStripMenuItem guestsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem occupancyToolStripMenuItem;
     }
 }
 

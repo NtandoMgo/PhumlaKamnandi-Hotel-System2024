@@ -19,6 +19,7 @@ namespace PhumlaKamnandi2024.presentation
         private BookingListingForm bookingListingForm;
         private AccountsListingForm accountsListingForm;
         private LogInForm logInForm;
+        private OccupancyReportForm occupancyReportForm;
 
         private bool isLoggedIn = false;
 
@@ -203,6 +204,12 @@ namespace PhumlaKamnandi2024.presentation
         private void stat_lbl_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void occupancyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            occupancyReportForm = new OccupancyReportForm();
+            occupancyReportForm.ShowDialog();
         }
     }
 }

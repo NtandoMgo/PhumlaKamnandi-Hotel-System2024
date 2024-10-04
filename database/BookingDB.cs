@@ -332,7 +332,7 @@ namespace PhumlaKamnandi2024.database
             //The GuestID and BookingReference cannot be changed
 
             daMain.UpdateCommand = new SqlCommand("UPDATE Booking SET BookingID =@BookingID, GuestID =@GuestID, RoomNo =@RoomNo,  NumAdults =@NumAdults, NumChildren =@NumChildren, CheckInDate =@CheckInDate, " +
-                "CheckOutDate =@CheckOutDate, SpecialRequest =@SpecialRequest" + "WHERE BookingID = @BookingID", cnMain);
+                "CheckOutDate =@CheckOutDate, SpecialRequest =@SpecialRequest WHERE BookingID = @BookingID", cnMain);
             Build_UPDATE_Parameters(aBooking);
         }
 

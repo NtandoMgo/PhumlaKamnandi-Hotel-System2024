@@ -3,15 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_STUDENT_DESKTOP_FINALE_PHUMLAKAMNANDI_HOTEL_SYSTEM2024_PHUMLAKAMNANDIDATABASE.MDF/True/SqlTable/dbo.Guest.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|c:\\users\\student\\desktop\\finale\\phumlakamnandi-hotel-system2024\\database\\bookingdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:database\\bookingdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\bookingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|c:\\users\\student\\desktop\\finale\\phumlakamnandi-hotel-system2024\\presentation\\bookingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:presentation\\bookingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|c:\\users\\student\\desktop\\finale\\phumlakamnandi-hotel-system2024\\presentation\\bookingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:presentation\\bookingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|c:\\users\\student\\desktop\\finale\\phumlakamnandi-hotel-system2024\\presentation\\occupancyreportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:presentation\\occupancyreportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|c:\\users\\student\\desktop\\finale\\phumlakamnandi-hotel-system2024\\presentation\\occupancyreportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:presentation\\occupancyreportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|c:\\users\\student\\desktop\\finale\\phumlakamnandi-hotel-system2024\\presentation\\dashboardmdiparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CE41F66-D7EF-4FAA-9706-8F0B6BD7A311}|PhumlaKamnandi2024.csproj|solutionrelative:presentation\\dashboardmdiparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +39,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "dbo.Guest [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_STUDENT_DESKTOP_FINALE_PHUMLAKAMNANDI_HOTEL_SYSTEM2024_PHUMLAKAMNANDIDATABASE.MDF/True/SqlTable/dbo.Guest.sql",
-              "ToolTip": "dbo.Guest [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-10-03T20:32:58.962Z",
+              "Title": "BookingDB.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\database\\BookingDB.cs",
+              "RelativeDocumentMoniker": "database\\BookingDB.cs",
+              "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\database\\BookingDB.cs",
+              "RelativeToolTip": "database\\BookingDB.cs",
+              "ViewState": "AgIAAEUBAAAAAAAAAAAgwE4BAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T09:42:16.156Z",
               "EditorCaption": ""
             },
             {
@@ -41,9 +57,9 @@
               "RelativeDocumentMoniker": "presentation\\BookingForm.cs",
               "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\BookingForm.cs",
               "RelativeToolTip": "presentation\\BookingForm.cs",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAswJsAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAADkBAAAAAAAAAADwv1sBAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T19:55:16.805Z",
+              "WhenOpened": "2024-10-04T09:39:56.122Z",
               "EditorCaption": ""
             },
             {
@@ -55,8 +71,46 @@
               "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\BookingForm.cs [Design]",
               "RelativeToolTip": "presentation\\BookingForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T20:26:48.626Z",
+              "WhenOpened": "2024-10-04T09:39:52.917Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OccupancyReportForm.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\OccupancyReportForm.cs",
+              "RelativeDocumentMoniker": "presentation\\OccupancyReportForm.cs",
+              "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\OccupancyReportForm.cs",
+              "RelativeToolTip": "presentation\\OccupancyReportForm.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAADgvxsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T08:55:30.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OccupancyReportForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\OccupancyReportForm.cs",
+              "RelativeDocumentMoniker": "presentation\\OccupancyReportForm.cs",
+              "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\OccupancyReportForm.cs [Design]",
+              "RelativeToolTip": "presentation\\OccupancyReportForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T08:07:54.291Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DashBoardMDIParent.cs",
+              "DocumentMoniker": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\DashBoardMDIParent.cs",
+              "RelativeDocumentMoniker": "presentation\\DashBoardMDIParent.cs",
+              "ToolTip": "C:\\Users\\Student\\Desktop\\finale\\PhumlaKamnandi-Hotel-System2024\\presentation\\DashBoardMDIParent.cs",
+              "RelativeToolTip": "presentation\\DashBoardMDIParent.cs",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAAANMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T09:10:50.866Z",
+              "EditorCaption": ""
             }
           ]
         }
