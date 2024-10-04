@@ -49,12 +49,12 @@ namespace PhumlaKamnandi2024.presentation
         private void ShowAll(bool value)
         {
             id_txt.Visible = value;
-            textBox2.Visible = value;
-            textBox3.Visible = value;
-            textBox4.Visible = value;
-            textBox5.Visible = value;
-            textBox6.Visible = value;
-            textBox7.Visible = value;
+            email_txt.Visible = value;
+            name_txt.Visible = value;
+            address_txt.Visible = value;
+            phone_txt.Visible = value;
+            exp_date_txt.Visible = value;
+            card_num_txt.Visible = value;
 
             label1.Visible = value;
             label2.Visible = value;
@@ -73,12 +73,12 @@ namespace PhumlaKamnandi2024.presentation
         private void ClearAll()
         {
             id_txt.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
-            textBox5.Clear();
-            textBox6.Clear();
-            textBox7.Clear();
+            email_txt.Clear();
+            name_txt.Clear();
+            address_txt.Clear();
+            phone_txt.Clear();
+            exp_date_txt.Clear();
+            card_num_txt.Clear();
         }
         #endregion
 
@@ -98,6 +98,16 @@ namespace PhumlaKamnandi2024.presentation
 
         private void update_button_Click(object sender, EventArgs e)
         {
+            Guest aGuest = new Guest();
+            aGuest.ID = id_txt.Text;
+            aGuest.Name = name_txt.Text;
+            aGuest.Address = address_txt.Text;
+            aGuest.Cell = phone_txt.Text;
+            aGuest.Email = email_txt.Text;
+            
+            guestController.DataMaintenance(aGuest, database.PhumlaKamnandiDB.DBOperation.Update);
+            guestController.FinalizeChanges(aGuest);
+            MessageBox.Show("Upade complete");
             ClearAll();
             currentState = FormState.View;
             ShowAll(false);
@@ -109,11 +119,11 @@ namespace PhumlaKamnandi2024.presentation
             {
                 // Retrieve selected guest data
                 DataGridViewRow selectedRow = guestsDataGridView.Rows[e.RowIndex];
-                textBox2.Text = selectedRow.Cells["Email"].Value.ToString();
+                email_txt.Text = selectedRow.Cells["Email"].Value.ToString();
                 id_txt.Text = selectedRow.Cells["ID"].Value.ToString();
-                textBox3.Text = selectedRow.Cells["Name"].Value.ToString();
-                textBox5.Text = selectedRow.Cells["Cell"].Value.ToString();
-                textBox4.Text = selectedRow.Cells["Address"].Value.ToString();
+                name_txt.Text = selectedRow.Cells["Name"].Value.ToString();
+                phone_txt.Text = selectedRow.Cells["Cell"].Value.ToString();
+                address_txt.Text = selectedRow.Cells["Address"].Value.ToString();
             }
         }
 

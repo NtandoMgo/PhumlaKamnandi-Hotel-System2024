@@ -49,3 +49,22 @@ C:\Users\Neliswa Dlamini\OneDrive\Desktop\FINALE-INF2011S\PhumlaKamnandi-Hotel-S
 C:\Users\Neliswa Dlamini\OneDrive\Desktop\FINALE-INF2011S\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.exe
 C:\Users\Neliswa Dlamini\OneDrive\Desktop\FINALE-INF2011S\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.pdb
 C:\Users\Student\Desktop\finale\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.presentation.OccupancyReportForm.resources
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\bin\Debug\PhumlaKamnandiDatabase.mdf
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\bin\Debug\PhumlaKamnandiDatabase_log.ldf
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\bin\Debug\PhumlaKamnandi2024.exe.config
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\bin\Debug\PhumlaKamnandi2024.exe
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\bin\Debug\PhumlaKamnandi2024.pdb
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.csproj.AssemblyReference.cache
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.Form1.resources
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.presentation.AccountsListingForm.resources
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.presentation.BookingForm.resources
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.presentation.BookingListingForm.resources
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.presentation.DashBoardMDIParent.resources
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.presentation.GuestListViewForm.resources
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.presentation.LogInForm.resources
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.presentation.OccupancyReportForm.resources
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.Properties.Resources.resources
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.csproj.GenerateResource.cache
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.csproj.CoreCompileInputs.cache
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.exe
+C:\Users\Neliswa Dlamini\OneDrive\Desktop\the-finale-2011\PhumlaKamnandi-Hotel-System2024\obj\Debug\PhumlaKamnandi2024.pdb

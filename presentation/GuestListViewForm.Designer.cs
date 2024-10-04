@@ -33,12 +33,12 @@
             this.update_button = new System.Windows.Forms.Button();
             this.edit_btn = new System.Windows.Forms.Button();
             this.id_txt = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.email_txt = new System.Windows.Forms.TextBox();
+            this.name_txt = new System.Windows.Forms.TextBox();
+            this.address_txt = new System.Windows.Forms.TextBox();
+            this.phone_txt = new System.Windows.Forms.TextBox();
+            this.exp_date_txt = new System.Windows.Forms.TextBox();
+            this.card_num_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -97,60 +97,60 @@
             this.id_txt.Size = new System.Drawing.Size(163, 35);
             this.id_txt.TabIndex = 3;
             // 
-            // textBox2
+            // email_txt
             // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(241, 557);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(232, 35);
-            this.textBox2.TabIndex = 4;
+            this.email_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_txt.Location = new System.Drawing.Point(241, 557);
+            this.email_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.email_txt.Name = "email_txt";
+            this.email_txt.Size = new System.Drawing.Size(232, 35);
+            this.email_txt.TabIndex = 4;
             // 
-            // textBox3
+            // name_txt
             // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(240, 497);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(319, 35);
-            this.textBox3.TabIndex = 5;
+            this.name_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_txt.Location = new System.Drawing.Point(240, 497);
+            this.name_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.name_txt.Name = "name_txt";
+            this.name_txt.Size = new System.Drawing.Size(319, 35);
+            this.name_txt.TabIndex = 5;
             // 
-            // textBox4
+            // address_txt
             // 
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(240, 678);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(232, 66);
-            this.textBox4.TabIndex = 6;
+            this.address_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.address_txt.Location = new System.Drawing.Point(240, 678);
+            this.address_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.address_txt.Multiline = true;
+            this.address_txt.Name = "address_txt";
+            this.address_txt.Size = new System.Drawing.Size(232, 66);
+            this.address_txt.TabIndex = 6;
             // 
-            // textBox5
+            // phone_txt
             // 
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(240, 614);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(163, 35);
-            this.textBox5.TabIndex = 7;
+            this.phone_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phone_txt.Location = new System.Drawing.Point(240, 614);
+            this.phone_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.phone_txt.Name = "phone_txt";
+            this.phone_txt.Size = new System.Drawing.Size(163, 35);
+            this.phone_txt.TabIndex = 7;
             // 
-            // textBox6
+            // exp_date_txt
             // 
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(734, 631);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(163, 35);
-            this.textBox6.TabIndex = 8;
+            this.exp_date_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exp_date_txt.Location = new System.Drawing.Point(734, 631);
+            this.exp_date_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.exp_date_txt.Name = "exp_date_txt";
+            this.exp_date_txt.Size = new System.Drawing.Size(163, 35);
+            this.exp_date_txt.TabIndex = 8;
             // 
-            // textBox7
+            // card_num_txt
             // 
-            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(734, 571);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(163, 35);
-            this.textBox7.TabIndex = 9;
+            this.card_num_txt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.card_num_txt.Location = new System.Drawing.Point(734, 571);
+            this.card_num_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.card_num_txt.Name = "card_num_txt";
+            this.card_num_txt.Size = new System.Drawing.Size(163, 35);
+            this.card_num_txt.TabIndex = 9;
             // 
             // label1
             // 
@@ -208,9 +208,9 @@
             this.label5.Location = new System.Drawing.Point(590, 631);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 26);
+            this.label5.Size = new System.Drawing.Size(115, 26);
             this.label5.TabIndex = 14;
-            this.label5.Text = "CVV:";
+            this.label5.Text = "Exp Date:";
             // 
             // label6
             // 
@@ -262,12 +262,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.card_num_txt);
+            this.Controls.Add(this.exp_date_txt);
+            this.Controls.Add(this.phone_txt);
+            this.Controls.Add(this.address_txt);
+            this.Controls.Add(this.name_txt);
+            this.Controls.Add(this.email_txt);
             this.Controls.Add(this.id_txt);
             this.Controls.Add(this.edit_btn);
             this.Controls.Add(this.update_button);
@@ -289,12 +289,12 @@
         private System.Windows.Forms.Button update_button;
         private System.Windows.Forms.Button edit_btn;
         private System.Windows.Forms.TextBox id_txt;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox email_txt;
+        private System.Windows.Forms.TextBox name_txt;
+        private System.Windows.Forms.TextBox address_txt;
+        private System.Windows.Forms.TextBox phone_txt;
+        private System.Windows.Forms.TextBox exp_date_txt;
+        private System.Windows.Forms.TextBox card_num_txt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

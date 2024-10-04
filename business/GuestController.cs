@@ -19,7 +19,6 @@ namespace PhumlaKamnandi2024.business
         public Collection<Guest> AllGuests { get { return guests; } }
         #endregion
 
-
         #region Constructor
         public GuestController()
         {
