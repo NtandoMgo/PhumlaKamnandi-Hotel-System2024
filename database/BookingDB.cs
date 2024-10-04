@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PhumlaKamnandi2024.database
 {
@@ -45,7 +46,7 @@ namespace PhumlaKamnandi2024.database
             {
                 throw new Exception("Generated BookingID exceeds the maximum length of 10 characters.");
             }
-
+            //MessageBox.Show("New ID: "+ newBookingID);
             return newBookingID;
         }
 
@@ -108,11 +109,7 @@ namespace PhumlaKamnandi2024.database
             FillDataSet(sqlLocal1, table1);
             Add2Collection(table1);
         }
-        public DataSet GetDataSet()
-        {
-            return dsMain;
-        }
-
+        
         private void Add2Collection(string table)
         {
             DataRow myRow = null;

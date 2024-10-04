@@ -48,6 +48,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.requests_txt = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             // updateBtn
             // 
             this.updateBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateBtn.Location = new System.Drawing.Point(708, 380);
+            this.updateBtn.Location = new System.Drawing.Point(708, 232);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(80, 46);
             this.updateBtn.TabIndex = 1;
@@ -75,7 +76,7 @@
             // 
             this.edit_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit_btn.Image = ((System.Drawing.Image)(resources.GetObject("edit_btn.Image")));
-            this.edit_btn.Location = new System.Drawing.Point(708, 231);
+            this.edit_btn.Location = new System.Drawing.Point(708, 232);
             this.edit_btn.Name = "edit_btn";
             this.edit_btn.Size = new System.Drawing.Size(80, 58);
             this.edit_btn.TabIndex = 2;
@@ -233,11 +234,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(708, 380);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(80, 46);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Done";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // BookingListingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.requests_txt);
@@ -288,5 +301,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox requests_txt;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

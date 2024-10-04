@@ -23,6 +23,7 @@ namespace PhumlaKamnandi2024.business
         #region property method
         public Collection<Booking> GetAllBookings {  get { return bookings; } }
         #endregion
+
         #region Constructor
         public BookingController()
         {
@@ -168,6 +169,24 @@ namespace PhumlaKamnandi2024.business
 
         }
 
+        public bool DeleteBooking(Booking aBooking)
+        {
+            // Call the instance method on bookingDB
+            bool success = bookingDB.DeleteBookingDataSource(aBooking);
+
+            // update the local collection if deletion was successful
+            if (success)
+            {
+                int index = FindIndex(aBooking);
+                if (index >= 0)
+                {
+                    bookings.RemoveAt(index);
+                }
+            }
+
+            return success; // Return the success status
+        }
+
         public int FindIndex(Booking aBooking)
         {
             int counter = 0;
@@ -215,8 +234,8 @@ namespace PhumlaKamnandi2024.business
             newBooking.Balance = CalculateCost(checkIn, checkOut);
 
             // Insert the booking into the database
-            DataMaintenance(newBooking, database.PhumlaKamnandiDB.DBOperation.Add);
-            FinalizeChanges(newBooking);
+            //DataMaintenance(newBooking, database.PhumlaKamnandiDB.DBOperation.Add);
+            //FinalizeChanges(newBooking);
 
             return newBooking;
         }

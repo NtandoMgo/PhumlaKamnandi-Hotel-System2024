@@ -115,6 +115,11 @@ namespace PhumlaKamnandi2024.presentation
                 NumAdults = adults,
                 NumChildren = kids
             };
+            if (string.IsNullOrEmpty(bookind_id_txt.Text))
+            {
+                MessageBox.Show("Please select the booking..");
+                return;
+            }
             bookingController.DataMaintenance(updatedBooking, database.PhumlaKamnandiDB.DBOperation.Update);
             //bookingController.FinalizeChanges(updatedBooking);
 
@@ -142,32 +147,41 @@ namespace PhumlaKamnandi2024.presentation
         private void button1_Click(object sender, EventArgs e)
         {// Delete button
             //bookingController.DataMaintenance()
-            //if (!(string.IsNullOrEmpty(bookind_id_txt.Text)))
-            //{
-            //    //var selectedRow = bookingsDataGridView.SelectedRows[0];
-            //    //string bookingIdToDelete = selectedRow.Cells["BookingID"].Value.ToString();
-            //    string bookingIdToDelete = bookind_id_txt.Text;
+            if (!(string.IsNullOrEmpty(bookind_id_txt.Text)))
+            {
+                //var selectedRow = bookingsDataGridView.SelectedRows[0];
+                //string bookingIdToDelete = selectedRow.Cells["BookingID"].Value.ToString();
+                string bookingIdToDelete = bookind_id_txt.Text;
 
-            //    // Confirm deletion
-            //    var confirmResult = MessageBox.Show("Are you sure you want to delete this booking?",
-            //                                         "Confirm Delete",
-            //                                         MessageBoxButtons.YesNo,
-            //                                         MessageBoxIcon.Warning);
-            //    if (confirmResult == DialogResult.Yes)
-            //    {
-            //        Booking bookingToDelete = new Booking(aBookingId, aGuestId, aRoomNum, adults, kids, originalCheckInDate, originalCheckOutDate, requests);
-            //        bookingController.DataMaintenance(bookingToDelete, database.PhumlaKamnandiDB.DBOperation.Delete);
+                // Confirm deletion
+                var confirmResult = MessageBox.Show("Are you sure you want to delete this booking?",
+                                                     "Confirm Delete",
+                                                     MessageBoxButtons.YesNo,
+                                                     MessageBoxIcon.Warning);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    Booking bookingToDelete = new Booking(aBookingId, aGuestId, aRoomNum, adults, kids, originalCheckInDate, originalCheckOutDate, requests);
+                    //bookingController.DataMaintenance(bookingToDelete, database.PhumlaKamnandiDB.DBOperation.Delete);
 
-            //        // Refresh the data grid
-            //        RefreshDataGrid();
+                    bool deleted = bookingController.DeleteBooking(bookingToDelete);
 
-            //        MessageBox.Show("Booking deleted successfully.");
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Please select a booking to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
+                    // Refresh the data grid
+                    RefreshDataGrid();
+
+                    if (deleted)
+                    {
+                        MessageBox.Show("Booking deleted successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Deleted unsuccessful.");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a booking to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         #endregion
@@ -215,6 +229,11 @@ namespace PhumlaKamnandi2024.presentation
                 datesChanged = false;
                 ShowAll(true);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         #region Methods

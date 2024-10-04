@@ -269,7 +269,8 @@ namespace PhumlaKamnandi2024.presentation
 
             ClearAllFields();
             //MessageBox.Show("A guest is added");
-            Booking newBooking = bookingController.CreateBooking(aGuest.ID, roomDisplay.Text, selectedAdult, selectedKids, dateTimePicker1.Value, dateTimePicker2.Value, request_txt.Text);
+            
+            Booking newBooking = bookingController.CreateBooking(aGuest.ID, roomDisplay.Text, selectedAdult, selectedKids, dateTimePicker1.Value, dateTimePicker2.Value, ValidateRequests());
 
             Exit_done_button.Visible = true;
 
@@ -282,6 +283,7 @@ namespace PhumlaKamnandi2024.presentation
             account.incrBalance(newBooking.Balance);
 
             bookingController.DataMaintenance(newBooking, database.PhumlaKamnandiDB.DBOperation.Add);
+            //bookingController.
             bookingController.FinalizeChanges(newBooking);
 
             accountController.DataMaintenance(account, database.PhumlaKamnandiDB.DBOperation.Add);
@@ -324,7 +326,7 @@ namespace PhumlaKamnandi2024.presentation
                 return;
             }
 
-            Booking newBooking = bookingController.CreateBooking(aGuest.ID, roomDisplay.Text, selectedAdult, selectedKids, dateTimePicker1.Value, dateTimePicker2.Value, request_txt.Text);
+            Booking newBooking = bookingController.CreateBooking(aGuest.ID, roomDisplay.Text, selectedAdult, selectedKids, dateTimePicker1.Value, dateTimePicker2.Value, ValidateRequests());
 
             Account account = accountController.Find(aGuest.ID);
 
@@ -390,6 +392,20 @@ namespace PhumlaKamnandi2024.presentation
         #endregion
 
         #region Validate
+
+        private string ValidateRequests()
+        {
+            string requests = string.Empty;
+            if (string.IsNullOrEmpty(request_txt.Text))
+            {
+                requests = "N/A";
+            }
+            else
+            {
+                requests = request_txt.Text;
+            }
+            return requests;
+        }
         private bool ValidateGuestCounts()
         {
             // Validate Adults Count
