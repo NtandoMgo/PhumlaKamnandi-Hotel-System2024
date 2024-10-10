@@ -62,7 +62,7 @@ namespace PhumlaKamnandi2024.presentation
 
         private void LogInForm_Load(object sender, EventArgs e)
         {
-
+            pasword_txt.UseSystemPasswordChar = true;
         }
 
         private void label3_Click(object sender, EventArgs e)

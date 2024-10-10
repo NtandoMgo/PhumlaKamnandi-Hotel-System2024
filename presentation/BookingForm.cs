@@ -210,6 +210,10 @@ namespace PhumlaKamnandi2024.presentation
             ShowAll(false);
 
             roomDisplay.ReadOnly = true;
+
+            DateTime maxDate = DateTime.Now.AddMonths(6);
+            dateTimePicker1.MaxDate = maxDate;
+            dateTimePicker2.MaxDate = maxDate;
         }
 
         private void id_txt_TextChanged(object sender, EventArgs e)
