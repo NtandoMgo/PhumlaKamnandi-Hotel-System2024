@@ -22,7 +22,7 @@ namespace PhumlaKamnandi2024.presentation
         private DateTime originalCheckInDate;
         private DateTime originalCheckOutDate;
         private bool datesChanged = false;
-        string aGuestId, aBookingId, aRoomNum, requests;
+        string aGuestId, aBookingId, aRoomNum, requests, origReq;
         int adults, kids;
         private enum FormState
         {
@@ -48,7 +48,7 @@ namespace PhumlaKamnandi2024.presentation
             new_bal_txt.ReadOnly = true;
 
             //updateBtn.Visible = val;
-            updateBtn.Visible = datesChanged; // Show update button only if dates have not changed
+            //updateBtn.Visible = datesChanged; // Show update button only if dates have not changed
         }
         private void ClearAll()
         {
@@ -104,6 +104,13 @@ namespace PhumlaKamnandi2024.presentation
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
+            // Check if the check-in date is before the check-out date
+            if (dateTimePicker1.Value >= dateTimePicker2.Value)
+            {
+                MessageBox.Show("Check-in date must be before check-out date.", "Invalid Dates", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             Booking updatedBooking = new Booking
             {
                 BookingID = aBookingId,
@@ -211,7 +218,7 @@ namespace PhumlaKamnandi2024.presentation
 
                 // Populate requests text box if applicable
                 requests_txt.Text = selectedRow.Cells["SpecialRequest"].Value?.ToString() ?? string.Empty;
-
+                origReq = requests_txt.Text;
                 // Set text boxes to read-only
                 bookind_id_txt.ReadOnly = true;
                 guest_id_txt.ReadOnly = true;
@@ -244,8 +251,10 @@ namespace PhumlaKamnandi2024.presentation
         }
         private void CheckForDateChange()
         {
-            // Check if dates have changed
-            if (dateTimePicker1.Value != originalCheckInDate || dateTimePicker2.Value != originalCheckOutDate)
+            bool datesHaveChanged = dateTimePicker1.Value != originalCheckInDate || dateTimePicker2.Value != originalCheckOutDate;
+
+            // Enable update button only if the dates have changed or if the request has changed
+            if (datesHaveChanged || requests_txt.Text != origReq)
             {
                 datesChanged = true;
                 new_bal_txt.Text = bookingController.CalculateCost(dateTimePicker1.Value, dateTimePicker2.Value).ToString();
