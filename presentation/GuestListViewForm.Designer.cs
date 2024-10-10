@@ -47,6 +47,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cancelbutton = new System.Windows.Forms.Button();
+            this.id_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guestsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,10 +81,10 @@
             this.edit_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.edit_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit_btn.Image = ((System.Drawing.Image)(resources.GetObject("edit_btn.Image")));
-            this.edit_btn.Location = new System.Drawing.Point(406, 394);
+            this.edit_btn.Location = new System.Drawing.Point(429, 394);
             this.edit_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.edit_btn.Name = "edit_btn";
-            this.edit_btn.Size = new System.Drawing.Size(154, 74);
+            this.edit_btn.Size = new System.Drawing.Size(130, 69);
             this.edit_btn.TabIndex = 2;
             this.edit_btn.UseVisualStyleBackColor = true;
             this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
@@ -248,12 +249,24 @@
             this.cancelbutton.UseVisualStyleBackColor = true;
             this.cancelbutton.Click += new System.EventHandler(this.cancelbutton_Click);
             // 
+            // id_label
+            // 
+            this.id_label.AutoSize = true;
+            this.id_label.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.id_label.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.id_label.Location = new System.Drawing.Point(119, 415);
+            this.id_label.Name = "id_label";
+            this.id_label.Size = new System.Drawing.Size(46, 26);
+            this.id_label.TabIndex = 18;
+            this.id_label.Text = "ID:";
+            // 
             // GuestListViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(984, 843);
+            this.Controls.Add(this.id_label);
             this.Controls.Add(this.cancelbutton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -303,5 +316,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button cancelbutton;
+        private System.Windows.Forms.Label id_label;
     }
 }

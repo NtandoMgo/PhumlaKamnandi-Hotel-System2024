@@ -28,8 +28,13 @@ namespace PhumlaKamnandi2024.presentation
             button4.Enabled = false;
             bookingController = new BookingController();
 
-            checkInDate.MinDate = DateTime.Now;
-            checkOutDate.MinDate = DateTime.Now;
+            DateTime today = DateTime.Now;
+            checkInDate.MaxDate = today;
+            checkOutDate.MaxDate = today;
+
+            // Set MinDate to 12 months ago
+            checkInDate.MinDate = today.AddMonths(-12);
+            checkOutDate.MinDate = today.AddMonths(-12);
         }
         #endregion
 

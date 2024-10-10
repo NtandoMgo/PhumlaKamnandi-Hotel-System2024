@@ -63,6 +63,7 @@ namespace PhumlaKamnandi2024.presentation
             label6.Visible = value;
             label7.Visible = value;
             name_lbl.Visible = value;
+            id_label.Visible = value;
 
             update_button.Visible = value;
             edit_btn.Visible = !value;
@@ -107,7 +108,7 @@ namespace PhumlaKamnandi2024.presentation
             
             guestController.DataMaintenance(aGuest, database.PhumlaKamnandiDB.DBOperation.Update);
             guestController.FinalizeChanges(aGuest);
-            MessageBox.Show("Upade complete");
+            MessageBox.Show("Update complete");
             ClearAll();
             currentState = FormState.View;
             ShowAll(false);
