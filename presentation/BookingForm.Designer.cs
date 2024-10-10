@@ -506,6 +506,7 @@
             this.listView2.Size = new System.Drawing.Size(511, 319);
             this.listView2.TabIndex = 45;
             this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
             // 
             // BookingForm
             // 

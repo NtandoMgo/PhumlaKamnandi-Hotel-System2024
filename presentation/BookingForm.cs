@@ -298,6 +298,12 @@ namespace PhumlaKamnandi2024.presentation
 
         private void serch_button_Click(object sender, EventArgs e)
         {
+            if (dateTimePicker1.Value >= dateTimePicker2.Value)
+            {
+                MessageBox.Show("Check-in date must be before the check-out date.", "Invalid Date Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             DateTime checkIn = dateTimePicker1.Value;
             DateTime checkOut = dateTimePicker2.Value;
 
@@ -585,6 +591,11 @@ namespace PhumlaKamnandi2024.presentation
         private void Exit_done_button_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
